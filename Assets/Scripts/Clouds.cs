@@ -8,12 +8,6 @@ public class Clouds : MonoBehaviour
     public float distCloud;
     public Transform cam;
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         transform.position = new Vector3(transform.position.x - velCloud, transform.position.y, transform.position.z);

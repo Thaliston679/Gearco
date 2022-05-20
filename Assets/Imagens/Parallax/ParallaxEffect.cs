@@ -141,9 +141,7 @@ public class ParallaxEffect : MonoBehaviour
         //float posX = cam.transform.position.x * moveX;
         
         float restartPosition = cam.transform.position.x * (1 - parallaxEffect);
-        /*
-        transform.position = new Vector3(startPos + posX, posY + distYcamCenter, transform.position.z);
-        */
+
         if (restartPosition > startPos + length)
         {
             startPos += length;
@@ -154,10 +152,7 @@ public class ParallaxEffect : MonoBehaviour
         }
         
     }
-
-    //Falta criar parte do script q clone as partes passadas do parallax
-
-    //p - moveX moveY distYcam transform.position.y
+    //p - moveX moveY distYcam  transform.position.y
     //0 - 0.1 0.2 -3    -4.956
     //1 - 0.2 0.4 -2    -3.912
     //2 - 0.3 0.5 -1    -2.89

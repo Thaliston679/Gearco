@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletControl : MonoBehaviour
 {
     private float bulletSpeed = 0;
+    public GameObject bulletImpact;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,14 @@ public class BulletControl : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground") //Chao
         {
+            GameObject objBulletEffect = Instantiate(bulletImpact, transform.position, Quaternion.identity);
+            //Destroi a bala
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.tag == "plataforma") //Plataforma
+        {
+            GameObject objBulletEffect = Instantiate(bulletImpact, transform.position, Quaternion.identity);
             //Destroi a bala
             Destroy(this.gameObject);
         }
@@ -35,6 +44,7 @@ public class BulletControl : MonoBehaviour
             //Destroi o inimiho
             Destroy(collision.gameObject);
             //Destroi a bala
+            GameObject objBulletEffect = Instantiate(bulletImpact, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

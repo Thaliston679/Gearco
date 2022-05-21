@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DestroyOnExit : StateMachineBehaviour
 {
+    public float temp;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Destroy(animator.gameObject, stateInfo.length/2);
+        Destroy(animator.gameObject, stateInfo.length / temp);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

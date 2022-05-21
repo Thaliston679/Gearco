@@ -34,6 +34,7 @@ public class Move2D : MonoBehaviour
 
     [Header("Tiro do personagem")]
     public GameObject bullet; //bala
+    public GameObject bulletEffect; //efeito de disparo
     private float selfTimeBullet = 0; //tempo entre tiros
     private bool canShoot = true; //pode atirar
 
@@ -134,6 +135,7 @@ public class Move2D : MonoBehaviour
         else
         {
             animator.SetBool("Jumping", false);
+            
         }
 
         if (rb.velocity.y <= -1)
@@ -295,10 +297,20 @@ public class Move2D : MonoBehaviour
         {
             //Origem do ponto de disparo
             Vector3 pointBullet = new Vector3(transform.position.x + 0.94f, transform.position.y + 0.959f, transform.position.z);
+            //Origem do ponto de efeito de disparo
+            Vector3 pointBulletEffect = new Vector3(transform.position.x + 1.542f, transform.position.y + 0.96f, transform.position.z);
 
             //Instancia tiro
             GameObject bulletFired = Instantiate(bullet, pointBullet, Quaternion.identity);
+            //Define direção da força aplicada
             bulletFired.GetComponent<BulletControl>().bulletDirection(0.1f);
+            //Muda direção do tiro
+            bulletFired.transform.eulerAngles = new Vector3(0, 0, 0);
+
+            //Instancia efeito de disparo
+            GameObject objBulletEffect = Instantiate(bulletEffect, pointBulletEffect, Quaternion.identity);
+            //Muda direção do efeito de disparo
+            objBulletEffect.transform.eulerAngles = new Vector3(0, 0, 0);
 
             //Destroi bala
             Destroy(bulletFired, 3f);
@@ -307,10 +319,20 @@ public class Move2D : MonoBehaviour
         {
             //Origem do ponto de disparo
             Vector3 pointBullet = new Vector3(transform.position.x - 0.94f, transform.position.y + 0.959f, transform.position.z);
+            //Origem do ponto de efeito de disparo
+            Vector3 pointBulletEffect = new Vector3(transform.position.x - 1.542f, transform.position.y + 0.96f, transform.position.z);
 
             //Instancia tiro
             GameObject bulletFired = Instantiate(bullet, pointBullet, Quaternion.identity);
+            //Define direção da força aplicada
             bulletFired.GetComponent<BulletControl>().bulletDirection(-0.1f);
+            //Muda direção do tiro
+            bulletFired.transform.eulerAngles = new Vector3(0, 0, 180);
+
+            //Instancia efeito de disparo
+            GameObject objBulletEffect = Instantiate(bulletEffect, pointBulletEffect, Quaternion.identity);
+            //Muda direção do efeito de disparo
+            objBulletEffect.transform.eulerAngles = new Vector3(0, 0, 180);
 
             //Destroi bala
             Destroy(bulletFired, 3f);

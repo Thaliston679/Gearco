@@ -55,6 +55,7 @@ public class Move2D : MonoBehaviour
 
     void Update()
     {
+        SinkingInQuicksand();
         PlayerMovement();
         PlayerJump();
         AnimationController();
@@ -62,10 +63,18 @@ public class Move2D : MonoBehaviour
         DamageControl();
         CheckDeath();
         Shooter();
-        SinkingInQuicksand();
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //Afundando na areia
+    void SinkingInQuicksand()
+    {
+        if (quicksandSinking)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -2f);
+        }       
+    }
 
     //Movimentação lateral do personagem
     void PlayerMovement()
@@ -386,12 +395,4 @@ public class Move2D : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    //Afundando na areia
-    void SinkingInQuicksand()
-    {
-        if (quicksandSinking)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, -2f);
-        }       
-    }
 }

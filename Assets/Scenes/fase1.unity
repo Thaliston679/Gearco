@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &5158
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -436,9 +436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &56621553
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -536,9 +536,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &58610865
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -811,9 +811,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!1 &151892957
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,9 +859,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &151892960
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1061,9 +1061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &198701040
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1161,9 +1161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &209394749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1441,8 +1441,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df801e4743cdec4a8710b72327745af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveY: 0
-  parallaxEffect: 0
+  moveY: 0.8
+  parallaxEffect: 0.7
 --- !u!1 &287508530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,9 +1488,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &287508533
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1739,9 +1739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &345120117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1839,9 +1839,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &346019899
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2090,9 +2090,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &425271539
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2307,9 +2307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!1 &595368594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,9 +2574,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &695420406
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2674,9 +2674,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &706737731
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3060,9 +3060,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!1 &816867499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,9 +3108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &816867502
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3260,9 +3260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!1 &842384595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,9 +3423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &868577318
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3672,9 +3672,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &937590075
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4200,9 +4200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!1 &1033298544
 GameObject:
   m_ObjectHideFlags: 0
@@ -4402,9 +4402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!1 &1079793942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4450,9 +4450,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1079793945
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4550,9 +4550,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1084994854
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4662,7 +4662,7 @@ Transform:
   m_GameObject: {fileID: 1093518440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: -2.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 824518666}
@@ -4690,8 +4690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df801e4743cdec4a8710b72327745af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveY: 0
-  parallaxEffect: 0
+  moveY: 0.5
+  parallaxEffect: 0.3
 --- !u!1001 &1094082181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4815,9 +4815,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1100129093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5072,9 +5072,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!1 &1138751456
 GameObject:
   m_ObjectHideFlags: 0
@@ -5120,9 +5120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1138751459
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5220,9 +5220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1165959658
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5471,9 +5471,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1244923188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48214,9 +48214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!1 &1307323848
 GameObject:
   m_ObjectHideFlags: 0
@@ -48631,9 +48631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1462939360
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48736,9 +48736,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1539132648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48987,9 +48987,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1551234024
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49580,9 +49580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1706370340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49732,9 +49732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!1 &1855482003
 GameObject:
   m_ObjectHideFlags: 0
@@ -49781,7 +49781,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7755102, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -49971,8 +49971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df801e4743cdec4a8710b72327745af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveY: 0
-  parallaxEffect: 0
+  moveY: 0.7
+  parallaxEffect: 0.5
 --- !u!1 &1955895241
 GameObject:
   m_ObjectHideFlags: 0
@@ -50018,9 +50018,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1955895244
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -50341,9 +50341,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1994197594
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -50441,9 +50441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &1995994508
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -50774,9 +50774,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0344842adc73e14091d4d0d43cca044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCloud: 0
-  distCloud: 0
-  cam: {fileID: 0}
+  velCloud: 0.004
+  distCloud: 12
+  cam: {fileID: 1547347097}
 --- !u!212 &2108250796
 SpriteRenderer:
   m_ObjectHideFlags: 0

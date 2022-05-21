@@ -189,7 +189,7 @@ public class Move2D : MonoBehaviour
         {
             this.transform.parent = collision.transform;
             isGrounded = true;
-        }
+        }       
     }
 
     private void OnTriggerExit2D(Collider2D collision) //Saindo da colisao com...
@@ -205,6 +205,11 @@ public class Move2D : MonoBehaviour
         {
             this.transform.parent = null;
             isGrounded = false;
+        }
+
+        if (collision.gameObject.tag == "Quicksand") //areia movediça
+        {
+            rb.gravityScale = 8;
         }
     }
 
@@ -236,6 +241,12 @@ public class Move2D : MonoBehaviour
         if(collision.gameObject.tag == "disket")
         {
             Checkpoint(collision);
+        }
+
+        if (collision.gameObject.tag == "Quicksand") //areia movediça
+        {
+            Debug.Log("NaAreia");
+            rb.gravityScale = 0;
         }
     }
 

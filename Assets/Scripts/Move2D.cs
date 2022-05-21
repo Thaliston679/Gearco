@@ -189,7 +189,12 @@ public class Move2D : MonoBehaviour
         {
             this.transform.parent = collision.transform;
             isGrounded = true;
-        }       
+        }
+
+        if (collision.gameObject.tag.Equals("Quicksand")) //Plataforma flutuante
+        {
+            Debug.Log("Colidiu com areia");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision) //Saindo da colisao com...
@@ -207,9 +212,9 @@ public class Move2D : MonoBehaviour
             isGrounded = false;
         }
 
-        if (collision.gameObject.tag == "Quicksand") //areia movediça
+        if (collision.gameObject.tag.Equals("Quicksand")) //Plataforma flutuante
         {
-            rb.gravityScale = 8;
+            Debug.Log("Saiu da areia");
         }
     }
 

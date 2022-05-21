@@ -24,6 +24,7 @@ public class Move2D : MonoBehaviour
     [Header("Colisão com chao")]
     //Colisão com chao
     private bool isGrounded;
+    private bool quicksandSinking;
 
     [Header("Vida do personagem")]
     //Vida do personagem
@@ -61,6 +62,7 @@ public class Move2D : MonoBehaviour
         DamageControl();
         CheckDeath();
         Shooter();
+        SinkingInQuicksand();
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -98,6 +100,11 @@ public class Move2D : MonoBehaviour
             if (isGrounded)
             {
                 isJumping = true;
+            }
+
+            if (quicksandSinking)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
             }
 
         }
@@ -193,10 +200,9 @@ public class Move2D : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("Quicksand")) //Plataforma flutuante
         {
+            quicksandSinking = true;
             Debug.Log("Colidiu com areia");
-            jumpSpeed /= 4;
-            rb.gravityScale = 0.001f;
-            speed /= 4;
+            speed /= 2;
         }
     }
 
@@ -217,10 +223,9 @@ public class Move2D : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("Quicksand")) //Plataforma flutuante
         {
+            quicksandSinking = false;
             Debug.Log("Saiu da areia");
-            jumpSpeed *= 4;
-            rb.gravityScale = 8;
-            speed *= 4;
+            speed *= 2;
         }
     }
 
@@ -252,12 +257,6 @@ public class Move2D : MonoBehaviour
         if(collision.gameObject.tag == "disket")
         {
             Checkpoint(collision);
-        }
-
-        if (collision.gameObject.tag == "Quicksand") //areia movediça
-        {
-            Debug.Log("NaAreia");
-            rb.gravityScale = 0;
         }
     }
 
@@ -385,5 +384,14 @@ public class Move2D : MonoBehaviour
         spawnPoint = new Vector3(-22, 2, 0);
         playerHP = 3;
         SceneManager.LoadScene(1);
+    }
+
+    //Afundando na areia
+    void SinkingInQuicksand()
+    {
+        if (quicksandSinking)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -2f);
+        }       
     }
 }

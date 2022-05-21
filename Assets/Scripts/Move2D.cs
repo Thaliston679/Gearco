@@ -72,7 +72,7 @@ public class Move2D : MonoBehaviour
     {
         if (quicksandSinking)
         {
-            rb.velocity = new Vector2(rb.velocity.x, -2f);
+            rb.velocity = new Vector2(rb.velocity.x, -0.9f);
         }       
     }
 
@@ -106,16 +106,10 @@ public class Move2D : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (isGrounded)
+            if (isGrounded || quicksandSinking)
             {
                 isJumping = true;
             }
-
-            if (quicksandSinking)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-            }
-
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
@@ -132,7 +126,14 @@ public class Move2D : MonoBehaviour
         {
             if (counterJump > 0)
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+                if (quicksandSinking)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, jumpSpeed / 4);
+                }
+                else
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+                }
             }
             else
             {
@@ -235,6 +236,7 @@ public class Move2D : MonoBehaviour
             quicksandSinking = false;
             Debug.Log("Saiu da areia");
             speed *= 2;
+            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed/2);
         }
     }
 

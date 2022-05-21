@@ -194,6 +194,9 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.tag.Equals("Quicksand")) //Plataforma flutuante
         {
             Debug.Log("Colidiu com areia");
+            jumpSpeed /= 4;
+            rb.gravityScale = 0.001f;
+            speed /= 4;
         }
     }
 
@@ -215,6 +218,9 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.tag.Equals("Quicksand")) //Plataforma flutuante
         {
             Debug.Log("Saiu da areia");
+            jumpSpeed *= 4;
+            rb.gravityScale = 8;
+            speed *= 4;
         }
     }
 

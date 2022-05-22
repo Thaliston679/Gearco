@@ -72,7 +72,7 @@ public class Move2D : MonoBehaviour
     {
         if (quicksandSinking)
         {
-            rb.velocity = new Vector2(rb.velocity.x, -0.9f);
+            rb.velocity = new Vector2(rb.velocity.x, -0.95f);
         }       
     }
 
@@ -288,11 +288,13 @@ public class Move2D : MonoBehaviour
         animator.SetBool("Damage", true);
         if(this.transform.localScale.x == 1)
         {
-            rb.AddForce(new Vector2(-speed * 2, jumpSpeed), ForceMode2D.Impulse);
+            //rb.AddForce(new Vector2(-speed * 2, jumpSpeed), ForceMode2D.Impulse);
+            rb.velocity = new Vector2(-40, 40);
         }
         if(this.transform.localScale.x == -1)
         {
-            rb.AddForce(new Vector2(speed * 2, jumpSpeed), ForceMode2D.Impulse);
+            //rb.AddForce(new Vector2(speed * 2, jumpSpeed), ForceMode2D.Impulse);
+            rb.velocity = new Vector2(40, 40);
         }
     }
 
@@ -394,7 +396,7 @@ public class Move2D : MonoBehaviour
     {
         spawnPoint = new Vector3(-22, 2, 0);
         playerHP = 3;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
 }

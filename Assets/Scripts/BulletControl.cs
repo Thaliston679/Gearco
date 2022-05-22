@@ -13,9 +13,9 @@ public class BulletControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x + bulletSpeed, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + bulletSpeed * 5.5f, transform.position.y, transform.position.z);
     }
 
     public void bulletDirection(float directionB)

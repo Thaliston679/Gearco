@@ -11,6 +11,8 @@ public class Move2D : MonoBehaviour
     private Vector3 faceRight;
     private Vector3 faceLeft;
 
+    [SerializeField] private bool lockMove = false;
+
     public SpriteRenderer spritePlayer;
 
     public Animator animator;
@@ -31,7 +33,7 @@ public class Move2D : MonoBehaviour
     public int playerHP = 10;
 
     private float selfTimeDamage = 0;
-    private bool vulnerable = true;
+    [SerializeField] private bool vulnerable = true;
 
     [Header("Tiro do personagem")]
     public GameObject bullet; //bala
@@ -46,6 +48,7 @@ public class Move2D : MonoBehaviour
     {
         spawnPoint = new Vector3(-22, 2, 0);
         rb.GetComponent<Rigidbody2D>();
+        rb.position = spawnPoint;
 
         //Espelhamento
         faceRight = transform.localScale;
@@ -79,25 +82,27 @@ public class Move2D : MonoBehaviour
     //Movimentação lateral do personagem
     void PlayerMovement()
     {
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (!lockMove)
         {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
-            direction = 1;
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                rb.velocity = new Vector2(speed, rb.velocity.y);
+                direction = 1;
 
-            animator.SetBool("Running", true);
-        }
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
-            direction = -1;
+                animator.SetBool("Running", true);
+            }
+            else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                rb.velocity = new Vector2(-speed, rb.velocity.y);
+                direction = -1;
 
-            animator.SetBool("Running", true);
-        }
-        else
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-
-            animator.SetBool("Running", false);
+                animator.SetBool("Running", true);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+                animator.SetBool("Running", false);
+            }
         }
     }
 
@@ -176,7 +181,7 @@ public class Move2D : MonoBehaviour
 
         if (this.transform.position.y < -10) //"Morte"
         {
-            this.transform.position = new Vector3(-22, 2, 0);
+            this.transform.position = spawnPoint;
         }
     }
 
@@ -256,6 +261,7 @@ public class Move2D : MonoBehaviour
         {
             if (vulnerable)
             {
+                lockMove = true;
                 KnockBack();
 
                 Debug.Log("Perdeu vida");
@@ -280,6 +286,10 @@ public class Move2D : MonoBehaviour
             vulnerable = true;
             selfTimeDamage = 0;
         }
+        if (selfTimeDamage > 0.2f)
+        {
+            lockMove = false;
+        }
     }
     
     //Kncokback sofrido ao levar dano(move o personagem para cima e para trás do inimigo que causou dano)
@@ -288,13 +298,12 @@ public class Move2D : MonoBehaviour
         animator.SetBool("Damage", true);
         if(this.transform.localScale.x == 1)
         {
-            //rb.AddForce(new Vector2(-speed * 2, jumpSpeed), ForceMode2D.Impulse);
-            rb.velocity = new Vector2(-40, 40);
+            rb.AddForce(new Vector2(-10, 15), ForceMode2D.Impulse);
+            
         }
         if(this.transform.localScale.x == -1)
         {
-            //rb.AddForce(new Vector2(speed * 2, jumpSpeed), ForceMode2D.Impulse);
-            rb.velocity = new Vector2(40, 40);
+            rb.AddForce(new Vector2(10, 15), ForceMode2D.Impulse);
         }
     }
 
@@ -347,7 +356,7 @@ public class Move2D : MonoBehaviour
             objBulletEffect.transform.eulerAngles = new Vector3(0, 0, 0);
 
             //Destroi bala
-            Destroy(bulletFired, 3f);
+            Destroy(bulletFired, 2f);
         }
         else
         {
@@ -369,7 +378,7 @@ public class Move2D : MonoBehaviour
             objBulletEffect.transform.eulerAngles = new Vector3(0, 0, 180);
 
             //Destroi bala
-            Destroy(bulletFired, 3f);
+            Destroy(bulletFired, 2f);
         }     
     }
 

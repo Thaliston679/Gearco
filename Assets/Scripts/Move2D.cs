@@ -41,12 +41,12 @@ public class Move2D : MonoBehaviour
     private float selfTimeBullet = 0; //tempo entre tiros
     private bool canShoot = true; //pode atirar
 
-    private Vector3 spawnPoint = new Vector3(-22, 2, 0); //Posição inicial
+    private Vector3 spawnPoint = new Vector3(-17, -1, 0); //Posição inicial
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnPoint = new Vector3(-22, 2, 0);
+        spawnPoint = new Vector3(-17, -1, 0);
         rb.GetComponent<Rigidbody2D>();
         rb.position = spawnPoint;
 
@@ -403,7 +403,7 @@ public class Move2D : MonoBehaviour
     //Redefine os valores de vida e spawnPoint
     void GameOver()
     {
-        spawnPoint = new Vector3(-22, 2, 0);
+        spawnPoint = new Vector3(-17, -1, 0);
         playerHP = 3;
         SceneManager.LoadScene(0);
     }

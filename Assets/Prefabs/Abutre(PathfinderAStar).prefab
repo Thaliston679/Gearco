@@ -125,7 +125,7 @@ MonoBehaviour:
   target: {fileID: 0}
   rb: {fileID: 0}
   ab: {fileID: 146394769801402374}
-  nextWayPointDistance: 10
+  nextWayPointDistance: 9
 --- !u!58 &146394769117141538
 CircleCollider2D:
   m_ObjectHideFlags: 0

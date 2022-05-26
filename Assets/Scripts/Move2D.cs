@@ -213,6 +213,8 @@ public class Move2D : MonoBehaviour
             {
                 this.transform.parent = collision.transform;
                 isGrounded = true;
+                plataformaVerticalV2 plat = collision.gameObject.GetComponent<plataformaVerticalV2>();
+                plat.SetWithPlayer(true);
             }
         }
 
@@ -237,6 +239,8 @@ public class Move2D : MonoBehaviour
         {
             this.transform.parent = null;
             isGrounded = false;
+            plataformaVerticalV2 plat = collision.gameObject.GetComponent<plataformaVerticalV2>();
+            plat.SetWithPlayer(false);
         }
 
         if (collision.gameObject.CompareTag("Quicksand")) //Areia movedica

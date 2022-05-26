@@ -202,18 +202,21 @@ public class Move2D : MonoBehaviour
     //Antes de mudar para Trigger estava:
     //private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground") //Chao
+        if (collision.gameObject.CompareTag("Ground")) //Chao
         {
             isGrounded = true;
         }
 
-        if (collision.gameObject.tag.Equals("plataforma")) //Plataforma flutuante
+        if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
         {
-            this.transform.parent = collision.transform;
-            isGrounded = true;
+            if(rb.transform.position.y > collision.transform.position.y + 0.2f)
+            {
+                this.transform.parent = collision.transform;
+                isGrounded = true;
+            }
         }
 
-        if (collision.gameObject.tag.Equals("Quicksand")) //Plataforma flutuante
+        if (collision.gameObject.CompareTag("Quicksand")) //Areia movedica
         {
             quicksandSinking = true;
             Debug.Log("Colidiu com areia");
@@ -225,18 +228,18 @@ public class Move2D : MonoBehaviour
     //Antes de mudar para Trigger estava:
     //private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground") //Chao
+        if (collision.gameObject.CompareTag("Ground")) //Chao
         {
             isGrounded = false;
         }
 
-        if (collision.gameObject.tag.Equals("plataforma")) //Plataforma flutuante
+        if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
         {
             this.transform.parent = null;
             isGrounded = false;
         }
 
-        if (collision.gameObject.tag.Equals("Quicksand")) //Plataforma flutuante
+        if (collision.gameObject.CompareTag("Quicksand")) //Areia movedica
         {
             quicksandSinking = false;
             Debug.Log("Saiu da areia");
@@ -257,7 +260,7 @@ public class Move2D : MonoBehaviour
     //Verifica colisão
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             if (vulnerable)
             {
@@ -271,10 +274,10 @@ public class Move2D : MonoBehaviour
       
         }
 
-        if(collision.gameObject.tag == "disket")
+        /*if(collision.gameObject.CompareTag("disket"))
         {
             Checkpoint(collision);
-        }
+        }*/
     }
 
     //Tmporizador de dano(Tempo invulnerável)

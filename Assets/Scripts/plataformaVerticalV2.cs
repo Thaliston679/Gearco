@@ -23,19 +23,35 @@ public class plataformaVerticalV2 : MonoBehaviour
             {
                 movingUp = true;
             }
+            else
+            {
+                movingUp = false;
+            }
         }
         if (transform.position.y > moveDown.position.y)
         {
             movingUp = false;
         }
 
+
         if (movingUp && withPlayer) //Move a plataforma para cima
         {
             transform.position = new Vector2(transform.position.x, transform.position.y + velPlat * Time.deltaTime);
         }
-        else if (!movingUp) //Move a plataforma para baixo
+        else if (movingUp && !withPlayer) //Move a plataforma para cima
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y - velPlat * Time.deltaTime);
+            movingUp = false;
+        }
+        else if (!movingUp && withPlayer) //Move a plataforma para baixo
+        {
+            movingUp = true;
+        }
+        else if (!movingUp && !withPlayer) //Move a plataforma para baixo
+        {
+            if (transform.position.y > moveDown.position.y)
+            {
+                transform.position = new Vector2(transform.position.x, transform.position.y - velPlat * Time.deltaTime);
+            }
         }
     }
 

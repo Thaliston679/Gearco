@@ -213,6 +213,15 @@ public class Move2D : MonoBehaviour
             {
                 this.transform.parent = collision.transform;
                 isGrounded = true;
+            }
+        }
+
+        if (collision.gameObject.CompareTag("plataformaV2")) //Plataforma flutuante V2
+        {
+            if (rb.transform.position.y > collision.transform.position.y + 0.2f)
+            {
+                this.transform.parent = collision.transform;
+                isGrounded = true;
                 plataformaVerticalV2 plat = collision.gameObject.GetComponent<plataformaVerticalV2>();
                 plat.SetWithPlayer(true);
             }
@@ -236,6 +245,12 @@ public class Move2D : MonoBehaviour
         }
 
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
+        {
+            this.transform.parent = null;
+            isGrounded = false;
+        }
+
+        if (collision.gameObject.CompareTag("plataformaV2")) //Plataforma flutuante V2
         {
             this.transform.parent = null;
             isGrounded = false;

@@ -33,7 +33,6 @@ public class plataformaVerticalV2 : MonoBehaviour
             movingUp = false;
         }
 
-
         if (movingUp && withPlayer) //Move a plataforma para cima
         {
             transform.position = new Vector2(transform.position.x, transform.position.y + velPlat * Time.deltaTime);

@@ -17,7 +17,7 @@ public class plataformaVerticalV2 : MonoBehaviour
 
     public void Movement()
     {
-        if (transform.position.y < moveUp.position.y)
+        if (transform.position.y < moveUp.position.y) //Plataforma abaixo do limite inferior
         {
             if (withPlayer)
             {
@@ -28,10 +28,13 @@ public class plataformaVerticalV2 : MonoBehaviour
                 movingUp = false;
             }
         }
-        if (transform.position.y > moveDown.position.y)
+
+        if (transform.position.y > moveDown.position.y) //Plataforma acima do limite superior
         {
             movingUp = false;
         }
+
+        //if(transform.position.y < moveDown.position.y && transform.position.z   )
 
         if (movingUp && withPlayer) //Move a plataforma para cima
         {

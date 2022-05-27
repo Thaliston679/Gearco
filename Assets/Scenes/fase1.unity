@@ -93320,7 +93320,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7781955, y: 1}
+    m_SensorSize: {x: 1.7732558, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -94051,6 +94051,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6594021068033743318, guid: cf7bd0cda48553642a1e8ff795252636, type: 3}
+      propertyPath: m_TagString
+      value: plataformaV2
+      objectReference: {fileID: 0}
     - target: {fileID: 6594021068172569260, guid: cf7bd0cda48553642a1e8ff795252636, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4

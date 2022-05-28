@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class Move2D : MonoBehaviour
 {
@@ -233,6 +234,22 @@ public class Move2D : MonoBehaviour
             Debug.Log("Colidiu com areia");
             speed /= 2;
         }
+
+        if (collision.gameObject.CompareTag("TilemapForeground"))
+        {
+            Debug.Log("Entrou da terra");
+            Tilemap tilemap = collision.GetComponent<Tilemap>();
+            if (tilemap != null)
+            {
+                tilemap.color = new Color(0.9176471f, 0.6156863f, 0.3490196f, 0.25f);
+            }
+            /*
+            SpriteRenderer spriteRenderer = collision.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+            }*/
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision) //Saindo da colisao com...
@@ -264,6 +281,16 @@ public class Move2D : MonoBehaviour
             Debug.Log("Saiu da areia");
             speed *= 2;
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed/2);
+        }
+
+        if (collision.gameObject.CompareTag("TilemapForeground"))
+        {
+            Debug.Log("Saiu da terra");
+            Tilemap tilemap = collision.GetComponent<Tilemap>();
+            if (tilemap != null)
+            {
+                tilemap.color = new Color(0.9176471f, 0.6156863f, 0.3490196f, 1.0f);
+            }
         }
     }
 

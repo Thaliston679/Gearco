@@ -10,6 +10,7 @@ TagManager:
   - Quicksand
   - PlayerHead
   - plataformaV2
+  - TilemapForeground
   layers:
   - Default
   - TransparentFX

@@ -323,7 +323,7 @@ public class Move2D : MonoBehaviour
             if (vulnerable)
             {
                 lockMove = true;
-                KnockBack();
+                KnockBack(collision);
 
                 GameObject hitSpark = Instantiate(spark, new Vector3(transform.position.x, transform.position.y+1, transform.position.z), Quaternion.identity);
                 hitSpark.transform.parent = this.transform;
@@ -359,9 +359,20 @@ public class Move2D : MonoBehaviour
     }
     
     //Kncokback sofrido ao levar dano(move o personagem para cima e para trás do inimigo que causou dano)
-    void KnockBack()
+    void KnockBack(Collision2D collision)
     {
+        if(transform.position.x >= collision.transform.position.x)
+        {
+            direction = -1;
+            rb.AddForce(new Vector2(10, 15), ForceMode2D.Impulse);
+        }
+        else
+        {
+            direction = 1;
+            rb.AddForce(new Vector2(-10, 15), ForceMode2D.Impulse);
+        }
         animator.SetBool("Damage", true);
+        /*
         if(this.transform.localScale.x == 1)
         {
             rb.AddForce(new Vector2(-10, 15), ForceMode2D.Impulse);
@@ -371,6 +382,7 @@ public class Move2D : MonoBehaviour
         {
             rb.AddForce(new Vector2(10, 15), ForceMode2D.Impulse);
         }
+        */
     }
 
     //Caso a vida estiver abaixo de 0, transporta o Player para o spawnPoint(checkpoint) e redefine a vida

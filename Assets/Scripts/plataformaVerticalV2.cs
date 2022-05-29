@@ -4,53 +4,28 @@ using UnityEngine;
 
 public class plataformaVerticalV2 : MonoBehaviour
 {
-    private bool movingUp = true;
     private bool withPlayer = false;
-    public float velPlat = 3f; //Velocidade da plataforma
+    public float velPlat; //Velocidade da plataforma
     public Transform moveUp;
     public Transform moveDown;
 
-    void Update()
+    void FixedUpdate()
     {   
         Movement();
     }
 
     public void Movement()
     {
-        if (transform.position.y < moveUp.position.y) //Plataforma abaixo do limite inferior
+        if (withPlayer)
         {
-            if (withPlayer)
+            if(transform.position.y <= moveDown.transform.position.y)
             {
-                movingUp = true;
-            }
-            else
-            {
-                movingUp = false;
+                transform.position = new Vector2(transform.position.x, transform.position.y + velPlat * Time.deltaTime);
             }
         }
-
-        if (transform.position.y > moveDown.position.y) //Plataforma acima do limite superior
+        else
         {
-            movingUp = false;
-        }
-
-        //if(transform.position.y < moveDown.position.y && transform.position.z   )
-
-        if (movingUp && withPlayer) //Move a plataforma para cima
-        {
-            transform.position = new Vector2(transform.position.x, transform.position.y + velPlat * Time.deltaTime);
-        }
-        else if (movingUp && !withPlayer) //Move a plataforma para cima
-        {
-            movingUp = false;
-        }
-        else if (!movingUp && withPlayer) //Move a plataforma para baixo
-        {
-            movingUp = true;
-        }
-        else if (!movingUp && !withPlayer) //Move a plataforma para baixo
-        {
-            if (transform.position.y > moveDown.position.y)
+            if (transform.position.y <= moveDown.transform.position.y + 2 && transform.position.y >= moveUp.transform.position.y)
             {
                 transform.position = new Vector2(transform.position.x, transform.position.y - velPlat * Time.deltaTime);
             }
@@ -61,6 +36,4 @@ public class plataformaVerticalV2 : MonoBehaviour
     {
         withPlayer = w;
     }
-
-
 }

@@ -122038,6 +122038,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1930293468550106054, guid: cf7bd0cda48553642a1e8ff795252636, type: 3}
+      propertyPath: velPlat
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6594021068033743318, guid: cf7bd0cda48553642a1e8ff795252636, type: 3}
       propertyPath: m_TagString
       value: plataformaV2

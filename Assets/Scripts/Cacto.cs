@@ -7,10 +7,6 @@ public class Cacto : MonoBehaviour
     // Start is called before the first frame update
     public Transform target;
     private bool aggressive = false;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -20,6 +16,6 @@ public class Cacto : MonoBehaviour
 
     public void SetAggressive(bool a)
     {
-        target = a;
+        aggressive = a;
     }
 }

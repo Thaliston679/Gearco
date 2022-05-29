@@ -42,7 +42,10 @@ public class BulletControl : MonoBehaviour
         if (collision.gameObject.tag == "Enemy") //Inimigo
         {
             //Destroi o inimiho
-            Destroy(collision.gameObject);
+
+            EnemyLifeAndDeath EnemyHpControl = collision.gameObject.GetComponent<EnemyLifeAndDeath>();
+            EnemyHpControl.SetEnemyHp(EnemyHpControl.GetEnemyHp()-1);
+
             //Destroi a bala
             GameObject objBulletEffect = Instantiate(bulletImpact, transform.position, Quaternion.identity);
             Destroy(this.gameObject);

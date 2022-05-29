@@ -12,7 +12,7 @@ public class EnemyLifeAndDeath : MonoBehaviour
         if(enemyHP <= 0)
         {
             GameObject explosion = Instantiate(smokeExplosion, this.transform.position, Quaternion.identity);
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 

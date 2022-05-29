@@ -2013,7 +2013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 3
-  smokeExplosion: {fileID: 0}
+  smokeExplosion: {fileID: 2246861826083040448, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
 --- !u!1001 &547364853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116376,7 +116376,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7773851, y: 1}
+    m_SensorSize: {x: 1.7785467, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -117320,63 +117320,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &2246861825485184734
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2246861826083040448, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_Name
-      value: SmokeExplosion
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2246861826083040511, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
 --- !u!1001 &5121015093158342820
 PrefabInstance:
   m_ObjectHideFlags: 0

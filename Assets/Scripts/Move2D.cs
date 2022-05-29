@@ -42,6 +42,9 @@ public class Move2D : MonoBehaviour
     private float selfTimeBullet = 0; //tempo entre tiros
     private bool canShoot = true; //pode atirar
 
+    [Header("Hit")]
+    public GameObject spark;
+
     private Vector3 spawnPoint = new Vector3(-17, -1, 0); //Posição inicial
 
     // Start is called before the first frame update
@@ -67,6 +70,7 @@ public class Move2D : MonoBehaviour
         DamageControl();
         CheckDeath();
         Shooter();
+        Achievements();
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -148,6 +152,7 @@ public class Move2D : MonoBehaviour
         }
     }
 
+    //Controle de animações
     void AnimationController()
     {
         //Controlador de animacao de jump(pulo) e fall(queda)
@@ -313,12 +318,17 @@ public class Move2D : MonoBehaviour
                 lockMove = true;
                 KnockBack();
 
+                GameObject hitSpark = Instantiate(spark, new Vector3(transform.position.x, transform.position.y+1, transform.position.z), Quaternion.identity);
+                hitSpark.transform.parent = this.transform;
+
                 Debug.Log("Perdeu vida");
                 playerHP--;
                 vulnerable = false;
             }
       
         }
+
+        /**/ //Inserir aqui colisão com Checkpoint e coletáveis
 
         /*if(collision.gameObject.CompareTag("disket"))
         {
@@ -455,6 +465,12 @@ public class Move2D : MonoBehaviour
         spawnPoint = new Vector3(-17, -1, 0);
         playerHP = 3;
         SceneManager.LoadScene(0);
+    }
+
+    //Conquistas
+    void Achievements()
+    {
+        //
     }
 
 }

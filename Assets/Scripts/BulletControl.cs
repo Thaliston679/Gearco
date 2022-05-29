@@ -41,8 +41,8 @@ public class BulletControl : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy") //Inimigo
         {
-            //Destroi o inimiho
-
+            // !!!!! - Todo inimigo DEVE TER o Script EnemyHpControl - !!!!!
+            //Chama o script do inimigo que verifica e altera a vida
             EnemyLifeAndDeath EnemyHpControl = collision.gameObject.GetComponent<EnemyLifeAndDeath>();
             EnemyHpControl.SetEnemyHp(EnemyHpControl.GetEnemyHp()-1);
 

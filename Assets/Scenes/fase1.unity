@@ -1995,25 +1995,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 146394769117141544, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
   m_PrefabInstance: {fileID: 1831761630}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &488126480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9192805499016881158, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
-  m_PrefabInstance: {fileID: 634500385}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &488126487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488126480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b584cc7acdbf53e4aac8458d6a9cf7ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHP: 3
-  smokeExplosion: {fileID: 2246861826083040448, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
 --- !u!1001 &547364853
 PrefabInstance:
   m_ObjectHideFlags: 0

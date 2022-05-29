@@ -11,6 +11,7 @@ public class Move2D : MonoBehaviour
     private float direction;
     private Vector3 faceRight;
     private Vector3 faceLeft;
+    public ParticleSystem dustEffect;
 
     [SerializeField] private bool lockMove = false;
 
@@ -93,6 +94,7 @@ public class Move2D : MonoBehaviour
             {
                 rb.velocity = new Vector2(speed, rb.velocity.y);
                 direction = 1;
+                DustEffect();
 
                 animator.SetBool("Running", true);
             }
@@ -100,6 +102,7 @@ public class Move2D : MonoBehaviour
             {
                 rb.velocity = new Vector2(-speed, rb.velocity.y);
                 direction = -1;
+                DustEffect();
 
                 animator.SetBool("Running", true);
             }
@@ -119,6 +122,7 @@ public class Move2D : MonoBehaviour
             if (isGrounded || quicksandSinking)
             {
                 isJumping = true;
+                DustEffect();
             }
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -471,6 +475,14 @@ public class Move2D : MonoBehaviour
     void Achievements()
     {
         //
+    }
+
+    //Aplica efeito de fumaça nos pés
+    void DustEffect()
+    {
+        dustEffect.Play();
+
+        //Caso for inserir um DustEffect nas costas a posição seria x = -0.407; y = 0.995.
     }
 
 }

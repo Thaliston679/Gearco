@@ -12,6 +12,21 @@ public class Cacto : MonoBehaviour
         AreaAggro();
     }
 
+    IEnumerator ThornShoot()
+    {
+        Animator animator = gameObject.GetComponent<Animator>();
+        if (animator.GetBool("Aggressive"))
+        {
+            /*
+            Vector3 pointBullet = new Vector3(transform.position.x - 0.94f, transform.position.y + 0.959f, transform.position.z);
+            GameObject bulletFired = Instantiate(bullet, pointBullet, Quaternion.identity);
+            bulletFired.transform.eulerAngles = new Vector3(0, 0, 180);
+            */
+
+        }
+        yield return null;
+    }
+
     public void AreaAggro()
     {
         float distance = Vector2.Distance(target.transform.position, transform.position);

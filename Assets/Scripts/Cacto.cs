@@ -18,7 +18,7 @@ public class Cacto : MonoBehaviour
 
         Debug.Log(distance);
 
-        if(distance <= 3)
+        if(distance <= 5)
         {
             SetAggressive(true);
         }

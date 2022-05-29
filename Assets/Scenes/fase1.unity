@@ -9491,6 +9491,7 @@ GameObject:
   - component: {fileID: 682477546}
   - component: {fileID: 682477545}
   - component: {fileID: 682477547}
+  - component: {fileID: 682477548}
   m_Layer: 0
   m_Name: Cacto
   m_TagString: Untagged
@@ -9585,6 +9586,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &682477548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682477544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e2f773ceead8c45807bf3ec7343343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 212305242}
 --- !u!1 &695420403
 GameObject:
   m_ObjectHideFlags: 0
@@ -116462,7 +116476,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7754238, y: 1}
+    m_SensorSize: {x: 1.7763714, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

@@ -94,7 +94,6 @@ public class Move2D : MonoBehaviour
             {
                 rb.velocity = new Vector2(speed, rb.velocity.y);
                 direction = 1;
-                DustEffect();
 
                 animator.SetBool("Running", true);
             }
@@ -102,7 +101,6 @@ public class Move2D : MonoBehaviour
             {
                 rb.velocity = new Vector2(-speed, rb.velocity.y);
                 direction = -1;
-                DustEffect();
 
                 animator.SetBool("Running", true);
             }
@@ -122,7 +120,6 @@ public class Move2D : MonoBehaviour
             if (isGrounded || quicksandSinking)
             {
                 isJumping = true;
-                DustEffect();
             }
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -215,6 +212,7 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) //Chao
         {
             isGrounded = true;
+            DustEffect();
         }
 
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
@@ -223,6 +221,7 @@ public class Move2D : MonoBehaviour
             {
                 this.transform.parent = collision.transform;
                 isGrounded = true;
+                DustEffect();
             }
         }
 
@@ -234,6 +233,7 @@ public class Move2D : MonoBehaviour
                 isGrounded = true;
                 plataformaVerticalV2 plat = collision.gameObject.GetComponent<plataformaVerticalV2>();
                 plat.SetWithPlayer(true);
+                DustEffect();
             }
         }
 
@@ -268,12 +268,14 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) //Chao
         {
             isGrounded = false;
+            DustEffect();
         }
 
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
         {
             this.transform.parent = null;
             isGrounded = false;
+            DustEffect();
         }
 
         if (collision.gameObject.CompareTag("plataformaV2")) //Plataforma flutuante V2
@@ -282,6 +284,7 @@ public class Move2D : MonoBehaviour
             isGrounded = false;
             plataformaVerticalV2 plat = collision.gameObject.GetComponent<plataformaVerticalV2>();
             plat.SetWithPlayer(false);
+            DustEffect();
         }
 
         if (collision.gameObject.CompareTag("Quicksand")) //Areia movedica

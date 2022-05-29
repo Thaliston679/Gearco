@@ -11,11 +11,25 @@ public class CactusAnimationControl : StateMachineBehaviour
 
         if (cacto.GetAggressive())
         {
-            animator.SetBool("Aggressive", true);
+            if (animator.GetBool("Peaceful"))
+            {
+                animator.SetBool("ToAggressive", true);
+            }
+            else if (animator.GetBool("ToAggressive"))
+            {
+                animator.SetBool("Aggressive", true);
+            }
         }
         else
         {
-            animator.SetBool("Aggressive", false);
+            if (animator.GetBool("Aggressive"))
+            {
+                animator.SetBool("ToPeaceful", true);
+            }
+            else if (animator.GetBool("ToPeaceful"))
+            {
+                animator.SetBool("Peaceful", true);
+            }
         }
 
     }

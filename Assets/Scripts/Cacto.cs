@@ -15,7 +15,10 @@ public class Cacto : MonoBehaviour
     public void AreaAggro()
     {
         float distance = Vector2.Distance(target.transform.position, transform.position);
-        if(distance <= 10)
+
+        Debug.Log(distance);
+
+        if(distance <= 3)
         {
             SetAggressive(true);
         }

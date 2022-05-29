@@ -5,9 +5,18 @@ using UnityEngine;
 public class CactusAnimationControl : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //Cacto cacto = animator.gameObject.
+        Cacto cacto = animator.gameObject.GetComponent<Cacto>();
+
+        if (cacto.GetAggressive())
+        {
+            animator.SetBool("Aggressive", true);
+        }
+        else
+        {
+            animator.SetBool("Aggressive", false);
+        }
 
     }
 

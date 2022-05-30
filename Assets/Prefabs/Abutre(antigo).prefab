@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 9192805499016881156}
   - component: {fileID: 9192805499016881163}
   - component: {fileID: 4430608642471647789}
+  - component: {fileID: 2928012639384282476}
   m_Layer: 7
   m_Name: AbIdleAnim_000
   m_TagString: Enemy
@@ -232,6 +233,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2928012639384282476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9192805499016881158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b584cc7acdbf53e4aac8458d6a9cf7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHP: 3
+  smokeExplosion: {fileID: 2246861826083040448, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
 --- !u!1 &9192805499184635314
 GameObject:
   m_ObjectHideFlags: 0

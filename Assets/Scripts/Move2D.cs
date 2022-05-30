@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class Move2D : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Move2D : MonoBehaviour
     private float direction;
     private Vector3 faceRight;
     private Vector3 faceLeft;
+    public ParticleSystem dustEffect;
 
     [SerializeField] private bool lockMove = false;
 
@@ -41,6 +43,9 @@ public class Move2D : MonoBehaviour
     private float selfTimeBullet = 0; //tempo entre tiros
     private bool canShoot = true; //pode atirar
 
+    [Header("Hit")]
+    public GameObject spark;
+
     private Vector3 spawnPoint = new Vector3(-17, -1, 0); //Posição inicial
 
     // Start is called before the first frame update
@@ -66,6 +71,7 @@ public class Move2D : MonoBehaviour
         DamageControl();
         CheckDeath();
         Shooter();
+        Achievements();
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -147,6 +153,7 @@ public class Move2D : MonoBehaviour
         }
     }
 
+    //Controle de animações
     void AnimationController()
     {
         //Controlador de animacao de jump(pulo) e fall(queda)
@@ -205,6 +212,7 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) //Chao
         {
             isGrounded = true;
+            DustEffect();
         }
 
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
@@ -213,6 +221,7 @@ public class Move2D : MonoBehaviour
             {
                 this.transform.parent = collision.transform;
                 isGrounded = true;
+                DustEffect();
             }
         }
 
@@ -224,6 +233,19 @@ public class Move2D : MonoBehaviour
                 isGrounded = true;
                 plataformaVerticalV2 plat = collision.gameObject.GetComponent<plataformaVerticalV2>();
                 plat.SetWithPlayer(true);
+                DustEffect();
+            }
+        }
+
+        if (collision.gameObject.CompareTag("plataformaH2")) //Plataforma flutuante H2
+        {
+            if (rb.transform.position.y > collision.transform.position.y + 0.2f)
+            {
+                this.transform.parent = collision.transform;
+                isGrounded = true;
+                plataformaHorizontalV2 plat = collision.gameObject.GetComponent<plataformaHorizontalV2>();
+                plat.SetWithPlayer(true);
+                DustEffect();
             }
         }
 
@@ -232,6 +254,22 @@ public class Move2D : MonoBehaviour
             quicksandSinking = true;
             Debug.Log("Colidiu com areia");
             speed /= 2;
+        }
+
+        if (collision.gameObject.CompareTag("TilemapForeground"))
+        {
+            Debug.Log("Entrou da terra");
+            Tilemap tilemap = collision.GetComponent<Tilemap>();
+            if (tilemap != null)
+            {
+                tilemap.color = new Color(0.9176471f, 0.6156863f, 0.3490196f, 0.25f);
+            }
+            /*
+            SpriteRenderer spriteRenderer = collision.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+            }*/
         }
     }
 
@@ -242,12 +280,14 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) //Chao
         {
             isGrounded = false;
+            DustEffect();
         }
 
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
         {
             this.transform.parent = null;
             isGrounded = false;
+            DustEffect();
         }
 
         if (collision.gameObject.CompareTag("plataformaV2")) //Plataforma flutuante V2
@@ -256,6 +296,16 @@ public class Move2D : MonoBehaviour
             isGrounded = false;
             plataformaVerticalV2 plat = collision.gameObject.GetComponent<plataformaVerticalV2>();
             plat.SetWithPlayer(false);
+            DustEffect();
+        }
+
+        if (collision.gameObject.CompareTag("plataformaH2")) //Plataforma flutuante V2
+        {
+            this.transform.parent = null;
+            isGrounded = false;
+            plataformaHorizontalV2 plat = collision.gameObject.GetComponent<plataformaHorizontalV2>();
+            plat.SetWithPlayer(false);
+            DustEffect();
         }
 
         if (collision.gameObject.CompareTag("Quicksand")) //Areia movedica
@@ -264,6 +314,16 @@ public class Move2D : MonoBehaviour
             Debug.Log("Saiu da areia");
             speed *= 2;
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed/2);
+        }
+
+        if (collision.gameObject.CompareTag("TilemapForeground"))
+        {
+            Debug.Log("Saiu da terra");
+            Tilemap tilemap = collision.GetComponent<Tilemap>();
+            if (tilemap != null)
+            {
+                tilemap.color = new Color(0.9176471f, 0.6156863f, 0.3490196f, 1.0f);
+            }
         }
     }
 
@@ -284,7 +344,10 @@ public class Move2D : MonoBehaviour
             if (vulnerable)
             {
                 lockMove = true;
-                KnockBack();
+                KnockBack(collision);
+
+                GameObject hitSpark = Instantiate(spark, new Vector3(transform.position.x, transform.position.y+1, transform.position.z), Quaternion.identity);
+                hitSpark.transform.parent = this.transform;
 
                 Debug.Log("Perdeu vida");
                 playerHP--;
@@ -292,6 +355,8 @@ public class Move2D : MonoBehaviour
             }
       
         }
+
+        /**/ //Inserir aqui colisão com Checkpoint e coletáveis
 
         /*if(collision.gameObject.CompareTag("disket"))
         {
@@ -315,9 +380,20 @@ public class Move2D : MonoBehaviour
     }
     
     //Kncokback sofrido ao levar dano(move o personagem para cima e para trás do inimigo que causou dano)
-    void KnockBack()
+    void KnockBack(Collision2D collision)
     {
+        if(transform.position.x >= collision.transform.position.x)
+        {
+            direction = -1;
+            rb.AddForce(new Vector2(10, 15), ForceMode2D.Impulse);
+        }
+        else
+        {
+            direction = 1;
+            rb.AddForce(new Vector2(-10, 15), ForceMode2D.Impulse);
+        }
         animator.SetBool("Damage", true);
+        /*
         if(this.transform.localScale.x == 1)
         {
             rb.AddForce(new Vector2(-10, 15), ForceMode2D.Impulse);
@@ -327,6 +403,7 @@ public class Move2D : MonoBehaviour
         {
             rb.AddForce(new Vector2(10, 15), ForceMode2D.Impulse);
         }
+        */
     }
 
     //Caso a vida estiver abaixo de 0, transporta o Player para o spawnPoint(checkpoint) e redefine a vida
@@ -428,6 +505,20 @@ public class Move2D : MonoBehaviour
         spawnPoint = new Vector3(-17, -1, 0);
         playerHP = 3;
         SceneManager.LoadScene(0);
+    }
+
+    //Conquistas
+    void Achievements()
+    {
+        //
+    }
+
+    //Aplica efeito de fumaça nos pés
+    void DustEffect()
+    {
+        dustEffect.Play();
+
+        //Caso for inserir um DustEffect nas costas a posição seria x = -0.407; y = 0.995.
     }
 
 }

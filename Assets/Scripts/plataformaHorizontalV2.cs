@@ -25,7 +25,7 @@ public class plataformaHorizontalV2 : MonoBehaviour
         }
         else
         {
-            if (transform.position.x >= moveRight.transform.position.x + 1 && transform.position.x <= moveLeft.transform.position.x)
+            if (transform.position.x >= moveRight.transform.position.x - 1 && transform.position.x <= moveLeft.transform.position.x)
             {
                 transform.position = new Vector2(transform.position.x + velPlat * Time.deltaTime, transform.position.y);
             }

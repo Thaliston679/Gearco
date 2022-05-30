@@ -11,6 +11,7 @@ TagManager:
   - PlayerHead
   - plataformaV2
   - TilemapForeground
+  - plataformaH2
   layers:
   - Default
   - TransparentFX

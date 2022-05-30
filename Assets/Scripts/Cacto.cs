@@ -23,8 +23,11 @@ public class Cacto : MonoBehaviour
             bulletFired.transform.eulerAngles = new Vector3(0, 0, 180);
             */
 
+
+
         }
-        yield return null;
+        yield return new WaitForSecondsRealtime(1);
+        ThornShoot();
     }
 
     public void AreaAggro()
@@ -36,10 +39,12 @@ public class Cacto : MonoBehaviour
         if(distance <= 4.5f)
         {
             SetAggressive(true);
+            StartCoroutine(ThornShoot());
         }
         else
         {
             SetAggressive(false);
+            StopCoroutine(ThornShoot());
         }
     }
 

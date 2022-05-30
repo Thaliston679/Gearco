@@ -237,6 +237,18 @@ public class Move2D : MonoBehaviour
             }
         }
 
+        if (collision.gameObject.CompareTag("plataformaH2")) //Plataforma flutuante H2
+        {
+            if (rb.transform.position.y > collision.transform.position.y + 0.2f)
+            {
+                this.transform.parent = collision.transform;
+                isGrounded = true;
+                plataformaHorizontalV2 plat = collision.gameObject.GetComponent<plataformaHorizontalV2>();
+                plat.SetWithPlayer(true);
+                DustEffect();
+            }
+        }
+
         if (collision.gameObject.CompareTag("Quicksand")) //Areia movedica
         {
             quicksandSinking = true;
@@ -283,6 +295,15 @@ public class Move2D : MonoBehaviour
             this.transform.parent = null;
             isGrounded = false;
             plataformaVerticalV2 plat = collision.gameObject.GetComponent<plataformaVerticalV2>();
+            plat.SetWithPlayer(false);
+            DustEffect();
+        }
+
+        if (collision.gameObject.CompareTag("plataformaH2")) //Plataforma flutuante V2
+        {
+            this.transform.parent = null;
+            isGrounded = false;
+            plataformaHorizontalV2 plat = collision.gameObject.GetComponent<plataformaHorizontalV2>();
             plat.SetWithPlayer(false);
             DustEffect();
         }

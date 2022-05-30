@@ -131,7 +131,7 @@ public class ParallaxEffect : MonoBehaviour
 
     //Quanto mais longe maior o X e menor o Y
 
-    private void FixedUpdate()
+    private void Update()
     {
         float distance = cam.transform.position.x * parallaxEffect;
         float posY = cam.transform.position.y * moveY;
@@ -153,8 +153,8 @@ public class ParallaxEffect : MonoBehaviour
         
     }
     //p - moveX moveY distYcam  transform.position.y
-    //0 - 0.1 0.2 -3    -4.956  0
-    //1 - 0.2 0.4 -2    -3.912  0.2
+    //0 - 0.1 0.2 -3    -4.956  0   -8Y
+    //1 - 0.2 0.4 -2    -3.912  0.2  -6Y
     //2 - 0.3 0.5 -1    -2.89   0.5
     //3 - 0.5 0.7 1     -0.846  0.7
     //4 - 0.7 0.8 3     1.198   0.8

@@ -11,33 +11,26 @@ public class Cacto : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ThornShoot());
+        InvokeRepeating("ThornShoot",1,1);
     }
     void Update()
     {
         AreaAggro();
+        
     }
 
-    IEnumerator ThornShoot()
+    public void ThornShoot()
     {
         Animator animator = gameObject.GetComponent<Animator>();
         if (animator.GetBool("Aggressive"))
-        {
-            /*
-            Vector3 pointBullet = new Vector3(transform.position.x - 0.94f, transform.position.y + 0.959f, transform.position.z);
-            GameObject bulletFired = Instantiate(bullet, pointBullet, Quaternion.identity);
-            bulletFired.transform.eulerAngles = new Vector3(0, 0, 180);
-            */
-            GameObject thornBullet =  Instantiate(thornBulletPrefab, thornOrigin.transform.position, thornOrigin.transform.rotation);
-            for (int i = -30; i < 210; i+= 30)
+        {           
+            for (float i = 0; i < 210; i+= 30)
             {
-                thornOrigin.transform.eulerAngles = new Vector3(0, 0, i);
+                GameObject thornBullet = Instantiate(thornBulletPrefab, thornOrigin.transform.position, thornOrigin.transform.rotation);
+                thornBullet.transform.eulerAngles = new Vector3(0, 0, i);
             }
-
-
+            Debug.Log("IEnumTest");
         }
-        yield return new WaitForSecondsRealtime(2f);
-        ThornShoot();
     }
 
     public void AreaAggro()

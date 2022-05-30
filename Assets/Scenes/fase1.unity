@@ -14307,9 +14307,10 @@ GameObject:
   - component: {fileID: 682477547}
   - component: {fileID: 682477548}
   - component: {fileID: 682477549}
+  - component: {fileID: 682477550}
   m_Layer: 0
   m_Name: Cacto
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14415,6 +14416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 212305242}
+  thornOrigin: {fileID: 1728055666}
+  thornBulletPrefab: {fileID: 5787759100306143866, guid: 9a0a0da0a99231245a0d16d2a62882c5, type: 3}
 --- !u!61 &682477549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14441,6 +14444,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3886795, y: 1.1926336}
   m_EdgeRadius: 0
+--- !u!114 &682477550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682477544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b584cc7acdbf53e4aac8458d6a9cf7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHP: 3
+  smokeExplosion: {fileID: 2246861826083040448, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
 --- !u!1 &695420403
 GameObject:
   m_ObjectHideFlags: 0
@@ -121349,7 +121366,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7798742, y: 1}
+    m_SensorSize: {x: 1.7763714, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

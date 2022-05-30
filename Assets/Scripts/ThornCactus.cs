@@ -15,7 +15,7 @@ public class ThornCactus : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(Vector3.right * speed);
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -18,14 +18,14 @@ public class plataformaVerticalV2 : MonoBehaviour
     {
         if (withPlayer)
         {
-            if(transform.position.y <= moveDown.transform.position.y)
+            if (transform.position.y <= moveDown.transform.position.y)
             {
                 transform.position = new Vector2(transform.position.x, transform.position.y + velPlat * Time.deltaTime);
             }
         }
         else
         {
-            if (transform.position.y <= moveDown.transform.position.y + 2 && transform.position.y >= moveUp.transform.position.y)
+            if (transform.position.y <= moveDown.transform.position.y + 1 && transform.position.y >= moveUp.transform.position.y)
             {
                 transform.position = new Vector2(transform.position.x, transform.position.y - velPlat * Time.deltaTime);
             }

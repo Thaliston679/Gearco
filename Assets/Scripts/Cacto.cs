@@ -6,7 +6,13 @@ public class Cacto : MonoBehaviour
 {
     public Transform target;
     private bool aggressive = false;
+    public Transform thornOrigin;
+    public GameObject thornBulletPrefab;
 
+    private void Start()
+    {
+        StartCoroutine(ThornShoot());
+    }
     void Update()
     {
         AreaAggro();
@@ -22,11 +28,15 @@ public class Cacto : MonoBehaviour
             GameObject bulletFired = Instantiate(bullet, pointBullet, Quaternion.identity);
             bulletFired.transform.eulerAngles = new Vector3(0, 0, 180);
             */
-
+            GameObject thornBullet =  Instantiate(thornBulletPrefab, thornOrigin.transform.position, thornOrigin.transform.rotation);
+            for (int i = -30; i < 210; i+= 30)
+            {
+                thornOrigin.transform.eulerAngles = new Vector3(0, 0, i);
+            }
 
 
         }
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(2f);
         ThornShoot();
     }
 
@@ -39,12 +49,10 @@ public class Cacto : MonoBehaviour
         if(distance <= 4.5f)
         {
             SetAggressive(true);
-            StartCoroutine(ThornShoot());
         }
         else
         {
             SetAggressive(false);
-            StopCoroutine(ThornShoot());
         }
     }
 

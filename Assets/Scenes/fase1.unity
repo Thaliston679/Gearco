@@ -17734,6 +17734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Abutre(PathfinderAStar)
       objectReference: {fileID: 0}
+    - target: {fileID: 146394769801402369, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
 --- !u!4 &992455535 stripped
@@ -120696,6 +120700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Abutre(PathfinderAStar)
       objectReference: {fileID: 0}
+    - target: {fileID: 146394769801402369, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
 --- !u!4 &1580860416 stripped
@@ -121402,6 +121410,10 @@ PrefabInstance:
       propertyPath: maxAcceleration
       value: -2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 146394769801402369, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
 --- !u!1 &1855482003
@@ -121451,7 +121463,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7788461, y: 1}
+    m_SensorSize: {x: 1.7793428, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

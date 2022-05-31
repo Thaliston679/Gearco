@@ -455,7 +455,7 @@ public class Move2D : MonoBehaviour
             objBulletEffect.transform.eulerAngles = new Vector3(0, 0, 0);
 
             //Destroi bala
-            Destroy(bulletFired, 2f);
+            Destroy(bulletFired, 0.5f);
         }
         else
         {
@@ -477,7 +477,7 @@ public class Move2D : MonoBehaviour
             objBulletEffect.transform.eulerAngles = new Vector3(0, 0, 180);
 
             //Destroi bala
-            Destroy(bulletFired, 2f);
+            Destroy(bulletFired, 0.5f);
         }     
     }
 

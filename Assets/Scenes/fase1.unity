@@ -7349,6 +7349,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 146394769117141545, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1136080212}
+    - target: {fileID: 146394769117141545, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1136080212}
     - target: {fileID: 146394769117141547, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
       propertyPath: m_Name
       value: Abutre(PathfinderAStar)
@@ -17876,6 +17884,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 146394769117141545, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1136080212}
+    - target: {fileID: 146394769117141545, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1136080212}
     - target: {fileID: 146394769117141547, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
       propertyPath: m_Name
       value: Abutre(PathfinderAStar)
@@ -20120,6 +20136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cacto
       objectReference: {fileID: 0}
+    - target: {fileID: 3217768809066557903, guid: 5f10e9aa9bd326040ac3be076f59ebf4, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 212305242}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f10e9aa9bd326040ac3be076f59ebf4, type: 3}
 --- !u!4 &1065013763 stripped
@@ -53653,6 +53673,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 146394769117141545, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1136080212}
+    - target: {fileID: 146394769117141545, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1136080212}
     - target: {fileID: 146394769117141547, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
       propertyPath: m_Name
       value: Abutre(PathfinderAStar)
@@ -122609,6 +122637,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 146394769117141545, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1136080212}
+    - target: {fileID: 146394769117141545, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1136080212}
     - target: {fileID: 146394769117141547, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
       propertyPath: m_Name
       value: Abutre(PathfinderAStar)
@@ -123452,6 +123488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cacto
       objectReference: {fileID: 0}
+    - target: {fileID: 3217768809066557903, guid: 5f10e9aa9bd326040ac3be076f59ebf4, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 212305242}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f10e9aa9bd326040ac3be076f59ebf4, type: 3}
 --- !u!4 &1513156812 stripped
@@ -125540,7 +125580,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7790698, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -126294,6 +126334,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 146394769117141545, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1136080212}
+    - target: {fileID: 146394769117141545, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1136080212}
     - target: {fileID: 146394769117141547, guid: 43d1091b0cb2f164fa5120c8826d52de, type: 3}
       propertyPath: m_Name
       value: Abutre(PathfinderAStar)

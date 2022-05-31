@@ -31,7 +31,7 @@ public class Cacto : MonoBehaviour
             }
             Debug.Log("IEnumTest");
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         doShoot=false;
     }
 
@@ -41,7 +41,7 @@ public class Cacto : MonoBehaviour
 
         Debug.Log(distance);
 
-        if(distance <= 4.5f)
+        if(distance <= 5)
         {
             SetAggressive(true);
         }

@@ -199,6 +199,8 @@ public class ParallaxEffect : MonoBehaviour
 
     }
     */
+
+    /*
     private Transform cam;
     private float length;
     private float startPos;
@@ -224,6 +226,37 @@ public class ParallaxEffect : MonoBehaviour
         else if (restartPosition < startPos - length)
         {
             startPos -= length;
+            transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
+        }
+
+    }
+    */
+    // Para camera perspectiva
+    private Transform cam;
+    private float length;
+    private float startPos;
+
+    private void Start()
+    {
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        startPos = transform.position.x;
+        cam = Camera.main.transform;
+    }
+    private void Update()
+    {
+
+        // transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
+
+        float restartPosition = cam.transform.position.x;
+
+        if (restartPosition > startPos + length)
+        {
+            startPos += length*2;
+            transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
+        }
+        else if (restartPosition < startPos - length)
+        {
+            startPos -= length*2;
             transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
         }
 

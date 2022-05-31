@@ -5677,7 +5677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192089005}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.846, z: 100}
+  m_LocalPosition: {x: 0, y: 4, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5750,9 +5750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfeaa0182892b74591bbaf8a968491c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveY: 0.6
-  distYcamCenter: 3
-  parallaxEffect: 0.5
 --- !u!1 &198701037
 GameObject:
   m_ObjectHideFlags: 0
@@ -18035,7 +18032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033298544}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -8, z: 10}
+  m_LocalPosition: {x: 0, y: -5, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18108,9 +18105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfeaa0182892b74591bbaf8a968491c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveY: 0.2
-  distYcamCenter: -2
-  parallaxEffect: 0
 --- !u!1 &1038912008
 GameObject:
   m_ObjectHideFlags: 0
@@ -119566,7 +119560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257264816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.198, z: 200}
+  m_LocalPosition: {x: 0, y: 7, z: 200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -119639,9 +119633,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfeaa0182892b74591bbaf8a968491c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveY: 0.7
-  distYcamCenter: 5
-  parallaxEffect: 0.7
 --- !u!95 &1270115623 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7757212170830839880, guid: 517eadabede3c3d46b962951c63d34a8, type: 3}
@@ -120522,7 +120513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564227755}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.89, z: 50}
+  m_LocalPosition: {x: 0, y: 1, z: 50}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -120595,9 +120586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfeaa0182892b74591bbaf8a968491c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveY: 0.5
-  distYcamCenter: 1
-  parallaxEffect: 0.3
 --- !u!1 &1578123171
 GameObject:
   m_ObjectHideFlags: 0
@@ -120776,7 +120764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601589338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6, z: 30}
+  m_LocalPosition: {x: 0, y: -2, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -120849,9 +120837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfeaa0182892b74591bbaf8a968491c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveY: 0.4
-  distYcamCenter: -1
-  parallaxEffect: 0.1
 --- !u!1 &1648433440
 GameObject:
   m_ObjectHideFlags: 0
@@ -121463,7 +121448,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7775176, y: 1}
+    m_SensorSize: {x: 1.7758112, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

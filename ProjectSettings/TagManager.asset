@@ -12,6 +12,7 @@ TagManager:
   - plataformaV2
   - TilemapForeground
   - plataformaH2
+  - checkPoint
   layers:
   - Default
   - TransparentFX

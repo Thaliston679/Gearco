@@ -207,12 +207,17 @@ public class Move2D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) //Entrando em colisao com...
     //Antes de mudar para Trigger estava:
-    //private void OnCollisionEnter2D(Collision2D collision)
+    //private void OnCollisionEnter2D(Collision2D collision) 
     {
         if (collision.gameObject.CompareTag("Ground")) //Chao
         {
             isGrounded = true;
             DustEffect();
+        }
+
+        if (collision.gameObject.CompareTag("checkPoint")) //Chao
+        {
+            Checkpoint(collision);
         }
 
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
@@ -493,7 +498,7 @@ public class Move2D : MonoBehaviour
     }
 
     //Ao colidir com checkpoint redefine o spawnPoint e destroi o disket
-    void Checkpoint(Collision2D collision)
+    void Checkpoint(Collider2D collision)
     {
         spawnPoint = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
         Destroy(collision.gameObject);

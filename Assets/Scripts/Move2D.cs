@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class Move2D : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Move2D : MonoBehaviour
     public SpriteRenderer spritePlayer;
 
     public Animator animator;
+
+    public GameObject bulletHUD;
 
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
@@ -429,6 +432,7 @@ public class Move2D : MonoBehaviour
             {
                 canShoot = false;
                 Shoot();
+                bulletHUD.GetComponent<BulletHUD>().BulletShoot();
             }
         }
         else
@@ -490,6 +494,7 @@ public class Move2D : MonoBehaviour
     void TimerBullet()
     {
         selfTimeBullet += Time.deltaTime;
+        bulletHUD.GetComponent<BulletHUD>().BulletTimer();
         if (selfTimeBullet > 0.5f)
         {
             canShoot = true;

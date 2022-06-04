@@ -21,6 +21,7 @@ public class Move2D : MonoBehaviour
     public Animator animator;
 
     public GameObject bulletHUD;
+    public GameObject batteryHUD;
 
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
@@ -62,6 +63,8 @@ public class Move2D : MonoBehaviour
         faceRight = transform.localScale;
         faceLeft = transform.localScale;
         faceLeft.x = faceLeft.x * -1;
+
+        batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
     }
 
     void Update()
@@ -359,6 +362,7 @@ public class Move2D : MonoBehaviour
 
                 Debug.Log("Perdeu vida");
                 playerHP--;
+                batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
                 vulnerable = false;
             }
       

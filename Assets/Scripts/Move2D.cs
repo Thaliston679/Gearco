@@ -221,9 +221,19 @@ public class Move2D : MonoBehaviour
             DustEffect();
         }
 
-        if (collision.gameObject.CompareTag("checkPoint")) //Chao
+        if (collision.gameObject.CompareTag("checkPoint")) //Checkpoint
         {
             Checkpoint(collision);
+        }
+
+        if (collision.gameObject.CompareTag("Battery")) //Bateria = HP
+        {
+            if(playerHP < 5)
+            {
+                playerHP++;
+                Destroy(collision.gameObject);
+                batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+            }
         }
 
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante

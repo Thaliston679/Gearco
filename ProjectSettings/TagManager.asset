@@ -13,6 +13,7 @@ TagManager:
   - TilemapForeground
   - plataformaH2
   - checkPoint
+  - Battery
   layers:
   - Default
   - TransparentFX

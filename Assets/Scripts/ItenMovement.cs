@@ -5,23 +5,23 @@ using UnityEngine;
 public class ItenMovement : MonoBehaviour
 {
     public bool moveUp = true;
-
     IEnumerator Revert()
     {
-        if (moveUp)
-        {
-            moveUp = false;
-            Debug.Log("Move False");
-        }
-        else
-        {
-            moveUp = true;
-            Debug.Log("Move True");
-        }
-        yield return 1f;
+        yield return new WaitForSeconds(0.5f);
+        moveUp = false;
+        yield return new WaitForSeconds(0.5f);
+        moveUp = true;
     }
     void Update()
     {
-        Revert();
+        if (moveUp)
+        {
+            StartCoroutine("Revert");
+            transform.position = new Vector2(transform.position.x, transform.position.y + 1 * Time.deltaTime);
+        }
+        else
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y - 1 * Time.deltaTime);
+        }
     }
 }

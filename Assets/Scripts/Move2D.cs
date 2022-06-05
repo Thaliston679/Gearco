@@ -23,6 +23,8 @@ public class Move2D : MonoBehaviour
     public GameObject bulletHUD;
     public GameObject batteryHUD;
     public GameObject flagCheck;
+    public GameObject panelMenuPause;
+    public GameObject pauseButton;
 
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
@@ -79,6 +81,7 @@ public class Move2D : MonoBehaviour
         CheckDeath();
         Shooter();
         Achievements();
+        Pause();
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -555,4 +558,26 @@ public class Move2D : MonoBehaviour
         //Caso for inserir um DustEffect nas costas a posição seria x = -0.407; y = 0.995.
     }
 
+    void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isGrounded || quicksandSinking)
+            {
+                if (Time.timeScale == 1)
+                {
+                    Time.timeScale = 0;
+                    panelMenuPause.SetActive(true);
+                    pauseButton.SetActive(false);
+
+                }
+                else if (Time.timeScale == 0)
+                {
+                    Time.timeScale = 1;
+                    panelMenuPause.SetActive(false);
+                    pauseButton.SetActive(true);
+                }
+            }
+        }
+    }
 }

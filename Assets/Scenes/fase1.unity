@@ -6454,6 +6454,8 @@ MonoBehaviour:
   bulletHUD: {fileID: 1266777828}
   batteryHUD: {fileID: 26352968}
   flagCheck: {fileID: 7559580859935214385, guid: 55f65c37c6cf28445888931824bdcf57, type: 3}
+  panelMenuPause: {fileID: 681401636}
+  pauseButton: {fileID: 1085899673}
   isJumping: 0
   jumpSpeed: 17.5
   counterJump: 0.17

@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b584cc7acdbf53e4aac8458d6a9cf7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 2
+  enemyHP: 1
   smokeExplosion: {fileID: 2246861826083040448, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
 --- !u!1 &146394769801402368
 GameObject:

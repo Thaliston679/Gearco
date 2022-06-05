@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class Move2D : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class Move2D : MonoBehaviour
     public SpriteRenderer spritePlayer;
 
     public Animator animator;
+
+    public GameObject bulletHUD;
+    public GameObject batteryHUD;
 
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
@@ -59,6 +63,8 @@ public class Move2D : MonoBehaviour
         faceRight = transform.localScale;
         faceLeft = transform.localScale;
         faceLeft.x = faceLeft.x * -1;
+
+        batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
     }
 
     void Update()
@@ -207,12 +213,27 @@ public class Move2D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) //Entrando em colisao com...
     //Antes de mudar para Trigger estava:
-    //private void OnCollisionEnter2D(Collision2D collision)
+    //private void OnCollisionEnter2D(Collision2D collision) 
     {
         if (collision.gameObject.CompareTag("Ground")) //Chao
         {
             isGrounded = true;
             DustEffect();
+        }
+
+        if (collision.gameObject.CompareTag("checkPoint")) //Checkpoint
+        {
+            Checkpoint(collision);
+        }
+
+        if (collision.gameObject.CompareTag("Battery")) //Bateria = HP
+        {
+            if(playerHP < 5)
+            {
+                Destroy(collision.gameObject);
+                playerHP++;
+                batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+            }
         }
 
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
@@ -351,6 +372,7 @@ public class Move2D : MonoBehaviour
 
                 Debug.Log("Perdeu vida");
                 playerHP--;
+                batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
                 vulnerable = false;
             }
       
@@ -424,6 +446,7 @@ public class Move2D : MonoBehaviour
             {
                 canShoot = false;
                 Shoot();
+                bulletHUD.GetComponent<BulletHUD>().BulletShoot();
             }
         }
         else
@@ -455,7 +478,7 @@ public class Move2D : MonoBehaviour
             objBulletEffect.transform.eulerAngles = new Vector3(0, 0, 0);
 
             //Destroi bala
-            Destroy(bulletFired, 2f);
+            Destroy(bulletFired, 0.5f);
         }
         else
         {
@@ -477,7 +500,7 @@ public class Move2D : MonoBehaviour
             objBulletEffect.transform.eulerAngles = new Vector3(0, 0, 180);
 
             //Destroi bala
-            Destroy(bulletFired, 2f);
+            Destroy(bulletFired, 0.5f);
         }     
     }
 
@@ -485,6 +508,7 @@ public class Move2D : MonoBehaviour
     void TimerBullet()
     {
         selfTimeBullet += Time.deltaTime;
+        bulletHUD.GetComponent<BulletHUD>().BulletTimer();
         if (selfTimeBullet > 0.5f)
         {
             canShoot = true;
@@ -493,10 +517,15 @@ public class Move2D : MonoBehaviour
     }
 
     //Ao colidir com checkpoint redefine o spawnPoint e destroi o disket
-    void Checkpoint(Collision2D collision)
+    void Checkpoint(Collider2D collision)
     {
         spawnPoint = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
         Destroy(collision.gameObject);
+        if (playerHP < 3)
+        {
+            playerHP = 3;
+            batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+        }
     }
 
     //Redefine os valores de vida e spawnPoint

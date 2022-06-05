@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3217768808199733073}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ThornOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 3217768809066557903}
   - component: {fileID: 3217768809066557902}
   - component: {fileID: 3217768809066557901}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cacto
   m_TagString: Enemy
   m_Icon: {fileID: 0}

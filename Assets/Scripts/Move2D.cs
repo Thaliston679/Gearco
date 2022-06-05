@@ -230,8 +230,8 @@ public class Move2D : MonoBehaviour
         {
             if(playerHP < 5)
             {
-                playerHP++;
                 Destroy(collision.gameObject);
+                playerHP++;
                 batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
             }
         }

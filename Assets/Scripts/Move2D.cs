@@ -521,6 +521,11 @@ public class Move2D : MonoBehaviour
     {
         spawnPoint = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
         Destroy(collision.gameObject);
+        if (playerHP < 3)
+        {
+            playerHP = 3;
+            batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+        }
     }
 
     //Redefine os valores de vida e spawnPoint

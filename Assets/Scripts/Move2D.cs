@@ -192,9 +192,12 @@ public class Move2D : MonoBehaviour
             animator.SetBool("IsFloor", false);
         }
 
+        //Se cair do cenário, volta pro checkpoint e perde 1hp
         if (this.transform.position.y < -10) //"Morte"
         {
             this.transform.position = spawnPoint;
+            playerHP--;
+            batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
         }
     }
 

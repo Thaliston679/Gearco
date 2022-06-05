@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6594021068033743306}
   - component: {fileID: 6594021068033743305}
   - component: {fileID: 6594021068033743304}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: platVertical
   m_TagString: plataforma
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6594021068172569260}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: moveUp
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6594021068670429477}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PlataformaVertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6594021069977790035}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: moveDown
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}

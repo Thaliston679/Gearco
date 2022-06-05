@@ -12,8 +12,6 @@ TagManager:
   - plataformaV2
   - TilemapForeground
   - plataformaH2
-  - checkPoint
-  - Battery
   layers:
   - Default
   - TransparentFX
@@ -25,7 +23,7 @@ TagManager:
   - Enemies
   - Collectibles
   - Foot
-  - Player
+  - 
   - 
   - 
   - 

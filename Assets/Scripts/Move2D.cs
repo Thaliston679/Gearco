@@ -22,6 +22,7 @@ public class Move2D : MonoBehaviour
 
     public GameObject bulletHUD;
     public GameObject batteryHUD;
+    public GameObject flagCheck;
 
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
@@ -523,6 +524,7 @@ public class Move2D : MonoBehaviour
     void Checkpoint(Collider2D collision)
     {
         spawnPoint = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
+        GameObject flag = Instantiate(flagCheck, new Vector3(collision.transform.position.x, collision.transform.position.y - 1.02f, collision.transform.position.z), Quaternion.identity);
         Destroy(collision.gameObject);
         if (playerHP < 3)
         {

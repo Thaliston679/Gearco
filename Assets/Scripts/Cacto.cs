@@ -6,31 +6,33 @@ public class Cacto : MonoBehaviour
 {
     public Transform target;
     private bool aggressive = false;
+    private bool doShoot = false;
     public Transform thornOrigin;
     public GameObject thornBulletPrefab;
 
-    private void Start()
-    {
-        InvokeRepeating("ThornShoot",1,1);
-    }
     void Update()
     {
         AreaAggro();
-        
+        if (aggressive && doShoot == false) {
+            StartCoroutine("ThornShoot");
+        }
     }
 
-    public void ThornShoot()
+    IEnumerator ThornShoot()
     {
+        doShoot = true;
         Animator animator = gameObject.GetComponent<Animator>();
         if (animator.GetBool("Aggressive"))
         {           
-            for (float i = 0; i < 210; i+= 30)
+            for (float i = -30; i < 211; i+= 30)
             {
                 GameObject thornBullet = Instantiate(thornBulletPrefab, thornOrigin.transform.position, thornOrigin.transform.rotation);
                 thornBullet.transform.eulerAngles = new Vector3(0, 0, i);
             }
             Debug.Log("IEnumTest");
         }
+        yield return new WaitForSeconds(1.5f);
+        doShoot=false;
     }
 
     public void AreaAggro()
@@ -39,7 +41,7 @@ public class Cacto : MonoBehaviour
 
         Debug.Log(distance);
 
-        if(distance <= 4.5f)
+        if(distance <= 6)
         {
             SetAggressive(true);
         }

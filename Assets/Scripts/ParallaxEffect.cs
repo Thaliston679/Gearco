@@ -114,7 +114,7 @@ public class ParallaxEffect : MonoBehaviour
     */
 
     //Tentativa mesclada
-
+    /*
     private Transform cam;
     public float moveY;
     public float distYcamCenter;
@@ -131,7 +131,7 @@ public class ParallaxEffect : MonoBehaviour
 
     //Quanto mais longe maior o X e menor o Y
 
-    private void FixedUpdate()
+    private void Update()
     {
         float distance = cam.transform.position.x * parallaxEffect;
         float posY = cam.transform.position.y * moveY;
@@ -153,11 +153,114 @@ public class ParallaxEffect : MonoBehaviour
         
     }
     //p - moveX moveY distYcam  transform.position.y
-    //0 - 0.1 0.2 -3    -4.956
-    //1 - 0.2 0.4 -2    -3.912
-    //2 - 0.3 0.5 -1    -2.89
-    //3 - 0.5 0.7 1     -0.846
-    //4 - 0.7 0.8 3     1.198
+    //0 - 0.1 0.2 -3    -4.956  0   -8Y
+    //1 - 0.2 0.4 -2    -3.912  0.2  -6Y
+    //2 - 0.3 0.5 -1    -2.89   0.5
+    //3 - 0.5 0.7 1     -0.846  0.7
+    //4 - 0.7 0.8 3     1.198   0.8
+
+    //p -ParallaxEffect moveY distYcam  transform.position.y
+    //0 --   x   x   -3
+    //1 --   x   x   -1
+    //2 --   x   x   1
+    //3 --   x   x   3
+    //4 --   x   x   5
+    */
+
+    /* Só vertical bem pouco
+    private Transform cam;
+    public float moveY;
+    public float distYcamCenter;
+    private float length;
+    private float startPos;
+
+    private void Start()
+    {
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        startPos = transform.position.x;
+        cam = Camera.main.transform;
+    }
+    private void Update()
+    {
+        float posY = cam.transform.position.y * moveY;
+
+        transform.position = new Vector3(startPos, posY + distYcamCenter, transform.position.z);
+
+        float restartPosition = cam.transform.position.x * 1;
+
+        if (restartPosition > startPos + length)
+        {
+            startPos += length;
+        }
+        else if (restartPosition < startPos - length)
+        {
+            startPos -= length;
+        }
+
+    }
+    */
+
+    /*
+    private Transform cam;
+    private float length;
+    private float startPos;
+
+    private void Start()
+    {
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        startPos = transform.position.x;
+        cam = Camera.main.transform;
+    }
+    private void Update()
+    {
+
+       // transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
+
+        float restartPosition = cam.transform.position.x;
+
+        if (restartPosition > startPos + length)
+        {
+            startPos += length;
+            transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
+        }
+        else if (restartPosition < startPos - length)
+        {
+            startPos -= length;
+            transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
+        }
+
+    }
+    */
+    // Para camera perspectiva
+    private Transform cam;
+    private float length;
+    private float startPos;
+
+    private void Start()
+    {
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        startPos = transform.position.x;
+        cam = Camera.main.transform;
+    }
+    private void Update()
+    {
+
+        // transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
+
+        float restartPosition = cam.transform.position.x;
+
+        if (restartPosition > startPos + length)
+        {
+            startPos += length*2;
+            transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
+        }
+        else if (restartPosition < startPos - length)
+        {
+            startPos -= length*2;
+            transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
+        }
+
+    }
 
 
 }

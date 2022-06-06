@@ -25,6 +25,7 @@ public class Move2D : MonoBehaviour
     public GameObject flagCheck;
     public GameObject panelMenuPause;
     public GameObject pauseButton;
+    public GameObject panelGameOver;
 
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
@@ -539,9 +540,8 @@ public class Move2D : MonoBehaviour
     //Redefine os valores de vida e spawnPoint
     void GameOver()
     {
-        spawnPoint = new Vector3(-17, -1, 0);
-        playerHP = 3;
-        SceneManager.LoadScene(0);
+        Time.timeScale = 0;
+        panelGameOver.SetActive(true);
     }
 
     //Conquistas
@@ -580,4 +580,25 @@ public class Move2D : MonoBehaviour
             }
         }
     }
+
+    public void SetSpawnPoint(Vector3 a)
+    {
+        spawnPoint = a;
+    }
+
+    public Vector3 GetSpawnPointP()
+    {
+        return spawnPoint;
+    }
+
+    public void SetPlayerHP(int a)
+    {
+        playerHP = a;
+    }
+
+    public int GetPlayerHP()
+    {
+        return playerHP;
+    }
 }
+//Adicionar painel game over

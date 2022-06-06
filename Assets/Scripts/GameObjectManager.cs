@@ -29,5 +29,10 @@ public class GameObjectManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void Play()
+    {
+        Time.timeScale = 1;
+    }
+
     public void Settings() => Application.OpenURL("https://thaliston.itch.io/");
 }

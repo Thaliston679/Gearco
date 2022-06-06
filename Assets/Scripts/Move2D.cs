@@ -69,6 +69,8 @@ public class Move2D : MonoBehaviour
         faceLeft.x = faceLeft.x * -1;
 
         batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+
+        Time.timeScale = 0;
     }
 
     void Update()
@@ -83,6 +85,7 @@ public class Move2D : MonoBehaviour
         Shooter();
         Achievements();
         Pause();
+        Respawn();
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -197,7 +200,12 @@ public class Move2D : MonoBehaviour
             animator.SetBool("IsFloor", false);
         }
 
-        //Se cair do cenário, volta pro checkpoint e perde 1hp
+        
+    }
+
+    //Se cair do cenário, volta pro checkpoint e perde 1hp
+    public void Respawn()
+    {
         if (this.transform.position.y < -10) //"Morte"
         {
             this.transform.position = spawnPoint;
@@ -281,24 +289,39 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.CompareTag("Quicksand")) //Areia movedica
         {
             quicksandSinking = true;
-            Debug.Log("Colidiu com areia");
             speed /= 2;
         }
 
         if (collision.gameObject.CompareTag("TilemapForeground"))
         {
-            Debug.Log("Entrou da terra");
             Tilemap tilemap = collision.GetComponent<Tilemap>();
             if (tilemap != null)
             {
                 tilemap.color = new Color(0.9176471f, 0.6156863f, 0.3490196f, 0.25f);
             }
-            /*
-            SpriteRenderer spriteRenderer = collision.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
-            }*/
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground")) //Chao
+        {
+            isGrounded = true;
+        }
+
+        if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
+        {
+            isGrounded = true;
+        }
+
+        if (collision.gameObject.CompareTag("plataformaV2")) //Plataforma flutuante V2
+        {
+            isGrounded = true;
+        }
+
+        if (collision.gameObject.CompareTag("plataformaH2")) //Plataforma flutuante V2
+        {
+            isGrounded = true;
         }
     }
 
@@ -340,14 +363,12 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.CompareTag("Quicksand")) //Areia movedica
         {
             quicksandSinking = false;
-            Debug.Log("Saiu da areia");
             speed *= 2;
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed/2);
         }
 
         if (collision.gameObject.CompareTag("TilemapForeground"))
         {
-            Debug.Log("Saiu da terra");
             Tilemap tilemap = collision.GetComponent<Tilemap>();
             if (tilemap != null)
             {
@@ -378,20 +399,12 @@ public class Move2D : MonoBehaviour
                 GameObject hitSpark = Instantiate(spark, new Vector3(transform.position.x, transform.position.y+1, transform.position.z), Quaternion.identity);
                 hitSpark.transform.parent = this.transform;
 
-                Debug.Log("Perdeu vida");
                 playerHP--;
                 batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
                 vulnerable = false;
             }
       
         }
-
-        /**/ //Inserir aqui colisão com Checkpoint e coletáveis
-
-        /*if(collision.gameObject.CompareTag("disket"))
-        {
-            Checkpoint(collision);
-        }*/
     }
 
     //Tmporizador de dano(Tempo invulnerável)
@@ -423,17 +436,6 @@ public class Move2D : MonoBehaviour
             rb.AddForce(new Vector2(-10, 15), ForceMode2D.Impulse);
         }
         animator.SetBool("Damage", true);
-        /*
-        if(this.transform.localScale.x == 1)
-        {
-            rb.AddForce(new Vector2(-10, 15), ForceMode2D.Impulse);
-            
-        }
-        if(this.transform.localScale.x == -1)
-        {
-            rb.AddForce(new Vector2(10, 15), ForceMode2D.Impulse);
-        }
-        */
     }
 
     //Caso a vida estiver abaixo de 0, transporta o Player para o spawnPoint(checkpoint) e redefine a vida
@@ -554,7 +556,6 @@ public class Move2D : MonoBehaviour
     void DustEffect()
     {
         dustEffect.Play();
-
         //Caso for inserir um DustEffect nas costas a posição seria x = -0.407; y = 0.995.
     }
 
@@ -586,19 +587,8 @@ public class Move2D : MonoBehaviour
         spawnPoint = a;
     }
 
-    public Vector3 GetSpawnPointP()
-    {
-        return spawnPoint;
-    }
-
     public void SetPlayerHP(int a)
     {
         playerHP = a;
     }
-
-    public int GetPlayerHP()
-    {
-        return playerHP;
-    }
 }
-//Adicionar painel game over

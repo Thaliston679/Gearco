@@ -10,7 +10,8 @@ public class PlayerHead : MonoBehaviour
     {
         if (collision.gameObject.tag == "Quicksand") //Afundar a cabeça na areia movediça
         {
-            player.GetComponent<Move2D>().playerHP = 0;
+            player.GetComponent<Move2D>().playerHP--;
+            player.GetComponent<Move2D>().Respawn();
         }
     }
 }

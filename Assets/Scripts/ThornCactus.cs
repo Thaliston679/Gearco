@@ -17,4 +17,9 @@ public class ThornCactus : MonoBehaviour
     {
         transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject, 0.1f);
+    }
 }

@@ -68,8 +68,6 @@ public class Move2D : MonoBehaviour
         faceLeft = transform.localScale;
         faceLeft.x = faceLeft.x * -1;
 
-        batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
-
         Time.timeScale = 0;
     }
 
@@ -86,6 +84,7 @@ public class Move2D : MonoBehaviour
         Achievements();
         Pause();
         Respawn();
+        AttBatteryHUD();
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -210,7 +209,7 @@ public class Move2D : MonoBehaviour
         {
             this.transform.position = spawnPoint;
             playerHP--;
-            batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+            AttBatteryHUD();
         }
     }
 
@@ -248,7 +247,7 @@ public class Move2D : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 playerHP++;
-                batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+                AttBatteryHUD();
             }
         }
 
@@ -400,7 +399,7 @@ public class Move2D : MonoBehaviour
                 hitSpark.transform.parent = this.transform;
 
                 playerHP--;
-                batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+                AttBatteryHUD();
                 vulnerable = false;
             }
       
@@ -535,7 +534,7 @@ public class Move2D : MonoBehaviour
         if (playerHP < 3)
         {
             playerHP = 3;
-            batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+            AttBatteryHUD();
         }
     }
 
@@ -582,13 +581,28 @@ public class Move2D : MonoBehaviour
         }
     }
 
+    public void AttBatteryHUD()
+    {
+        batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+    }
+
     public void SetSpawnPoint(Vector3 a)
     {
         spawnPoint = a;
     }
 
+    public Vector3 GetSpawnPoint()
+    {
+        return spawnPoint;
+    }
+
     public void SetPlayerHP(int a)
     {
         playerHP = a;
+    }
+
+    public int GetPlayerHP()
+    {
+        return playerHP;
     }
 }

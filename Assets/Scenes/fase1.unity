@@ -35212,6 +35212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee03b41c5aa2a74aa5406d8d659639e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  batteryHUD: {fileID: 26352968}
   player: {fileID: 212305239}
 --- !u!1 &1138751456
 GameObject:

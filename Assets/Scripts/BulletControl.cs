@@ -40,8 +40,12 @@ public class BulletControl : MonoBehaviour
             //Chama o script do inimigo que verifica e altera a vida
             EnemyLifeAndDeath EnemyHpControl = collision.gameObject.GetComponent<EnemyLifeAndDeath>();
             EnemyHpControl.SetEnemyHp(EnemyHpControl.GetEnemyHp()-1);
-
-            collision.gameObject.GetComponent<SpriteRenderer>().color.Equals(Color.red);
+            if(EnemyHpControl.GetEnemyHp() >= 1)
+            {
+                SpriteRenderer img = collision.gameObject.GetComponent<SpriteRenderer>();
+                img.color = Color.red;
+            }
+            
 
             //Destroi a bala
             GameObject objBulletEffect = Instantiate(bulletImpact, transform.position, Quaternion.identity);

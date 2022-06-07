@@ -5,6 +5,7 @@ using UnityEngine;
 public class itenRotation : MonoBehaviour
 {
     public bool moveUp = true;
+    public float inclination;
     IEnumerator Revert()
     {
         yield return new WaitForSeconds(1.5f);
@@ -12,16 +13,25 @@ public class itenRotation : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         moveUp = true;
     }
-    void Update()
+    void FixedUpdate()
     {
+        Debug.Log(transform.eulerAngles.z);
         if (moveUp)
         {
-            StartCoroutine("Revert");
-            transform.position = new Vector2(transform.position.x, transform.position.y + 0.3f * Time.deltaTime);
+            StartCoroutine(Revert());
+
+            if (transform.eulerAngles.z <= inclination)
+            {
+                transform.Rotate(0, 0, inclination * Time.deltaTime);
+            }
         }
         else
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y - 0.3f * Time.deltaTime);
+            if (transform.eulerAngles.z >= -inclination)
+            {
+                transform.Rotate(0, 0, -inclination * Time.deltaTime);
+            }
         }
+
     }
 }

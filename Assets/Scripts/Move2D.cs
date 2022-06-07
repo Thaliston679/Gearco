@@ -549,14 +549,16 @@ public class Move2D : MonoBehaviour
     //Ao colidir com checkpoint redefine o spawnPoint e destroi o disket
     void Checkpoint(Collider2D collision)
     {
-        spawnPoint = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
-        GameObject flag = Instantiate(flagCheck, new Vector3(collision.transform.position.x, collision.transform.position.y - 1.02f, collision.transform.position.z), Quaternion.identity);
+        Vector3 flagPos = collision.gameObject.GetComponent<ItenMovement>().GetStartPosistion();
+        spawnPoint = flagPos;
+        GameObject flag = Instantiate(flagCheck, new Vector3(flagPos.x,flagPos.y - 1.02f,flagPos.z), Quaternion.identity);
         Destroy(collision.gameObject);
         if (playerHP < 3)
         {
             playerHP = 3;
             AttBatteryHUD();
         }
+
     }
 
     //Redefine os valores de vida e spawnPoint

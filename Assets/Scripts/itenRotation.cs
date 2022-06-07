@@ -4,34 +4,26 @@ using UnityEngine;
 
 public class itenRotation : MonoBehaviour
 {
-    public bool moveUp = true;
+    public bool moveLeft = true;
     public float inclination;
     IEnumerator Revert()
     {
         yield return new WaitForSeconds(1.5f);
-        moveUp = false;
+        moveLeft = false;
         yield return new WaitForSeconds(1.5f);
-        moveUp = true;
+        moveLeft = true;
     }
     void FixedUpdate()
     {
-        Debug.Log(transform.eulerAngles.z);
-        if (moveUp)
+        if (moveLeft)
         {
             StartCoroutine(Revert());
-
-            if (transform.eulerAngles.z <= inclination)
-            {
-                transform.Rotate(0, 0, inclination * Time.deltaTime);
-            }
+            transform.Rotate(0, 0, inclination * Time.deltaTime);
         }
         else
         {
-            if (transform.eulerAngles.z >= -inclination)
-            {
-                transform.Rotate(0, 0, -inclination * Time.deltaTime);
-            }
+            transform.Rotate(0, 0, -inclination * Time.deltaTime);
         }
-
+        //Depois de alguns minutos, inclina demais para um lado
     }
 }

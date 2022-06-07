@@ -5,6 +5,13 @@ using UnityEngine;
 public class ItenMovement : MonoBehaviour
 {
     public bool moveUp = true;
+    private Vector3 startPosition;
+
+    private void Start()
+    {
+        startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
+
     IEnumerator Revert()
     {
         yield return new WaitForSeconds(1.5f);
@@ -17,11 +24,20 @@ public class ItenMovement : MonoBehaviour
         if (moveUp)
         {
             StartCoroutine("Revert");
+            if(transform.position.y > startPosition.y + 1f)
+            {
+                transform.position = new Vector2(transform.position.x, startPosition.y + 0.9f);
+            }
             transform.position = new Vector2(transform.position.x, transform.position.y + 0.3f * Time.deltaTime);
         }
         else
         {
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.3f * Time.deltaTime);
         }
+    }
+
+    public Vector3 GetStartPosistion()
+    {
+        return startPosition;
     }
 }

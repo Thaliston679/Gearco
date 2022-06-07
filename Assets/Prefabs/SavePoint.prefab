@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5207491992769690046}
   - component: {fileID: 5207491992769690045}
   - component: {fileID: 5207491992769690047}
-  - component: {fileID: 4659815447303784708}
+  - component: {fileID: 5483501393315653857}
   m_Layer: 8
   m_Name: Disket
   m_TagString: checkPoint
@@ -144,7 +144,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7866667, y: 0.8}
   m_EdgeRadius: 0
---- !u!114 &4659815447303784708
+--- !u!114 &5483501393315653857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,8 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5207491992769690044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e743407587a704bae3a61aa0b970d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 449e32c27d815e246b0357795ad8eaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveUp: 1
-  inclination: 30

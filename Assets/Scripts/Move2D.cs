@@ -13,6 +13,7 @@ public class Move2D : MonoBehaviour
     private Vector3 faceRight;
     private Vector3 faceLeft;
     public ParticleSystem dustEffect;
+    public ParticleSystem batteryEffect;
 
     [SerializeField] private bool lockMove = false;
 
@@ -267,6 +268,7 @@ public class Move2D : MonoBehaviour
                 Destroy(collision.gameObject);
                 playerHP++;
                 AttBatteryHUD();
+                batteryEffect.Play();
             }
         }
 

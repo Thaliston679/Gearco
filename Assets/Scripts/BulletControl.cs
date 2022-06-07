@@ -41,6 +41,8 @@ public class BulletControl : MonoBehaviour
             EnemyLifeAndDeath EnemyHpControl = collision.gameObject.GetComponent<EnemyLifeAndDeath>();
             EnemyHpControl.SetEnemyHp(EnemyHpControl.GetEnemyHp()-1);
 
+            collision.gameObject.GetComponent<SpriteRenderer>().color.Equals(Color.red);
+
             //Destroi a bala
             GameObject objBulletEffect = Instantiate(bulletImpact, transform.position, Quaternion.identity);
             Destroy(this.gameObject);

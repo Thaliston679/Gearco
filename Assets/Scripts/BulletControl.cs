@@ -6,6 +6,7 @@ public class BulletControl : MonoBehaviour
 {
     private float bulletSpeed = 0;
     public GameObject bulletImpact;
+    private GameObject enemyC;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -17,6 +18,8 @@ public class BulletControl : MonoBehaviour
     {
         bulletSpeed = directionB;
     }
+
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -44,6 +47,8 @@ public class BulletControl : MonoBehaviour
             {
                 SpriteRenderer img = collision.gameObject.GetComponent<SpriteRenderer>();
                 img.color = Color.red;
+                EnemyHpControl.SetSelfTimerDamage(0);
+                EnemyHpControl.SetOnDamage(true);
             }
             
 
@@ -51,5 +56,14 @@ public class BulletControl : MonoBehaviour
             GameObject objBulletEffect = Instantiate(bulletImpact, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+    }
+    public void SetCollision2D(GameObject collision)
+    {
+        enemyC = collision;
+    }
+
+    public GameObject GetCollision2D()
+    {
+        return enemyC;
     }
 }

@@ -6,6 +6,8 @@ public class EnemyLifeAndDeath : MonoBehaviour
 {
     public int enemyHP;
     public GameObject smokeExplosion;
+    private float selfTimeDamage = 0;
+    private bool onDamage = false;
 
     void Update()
     {
@@ -14,6 +16,28 @@ public class EnemyLifeAndDeath : MonoBehaviour
             GameObject explosion = Instantiate(smokeExplosion, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+        TimerDamage();
+    }
+
+    void TimerDamage()
+    {
+        if (selfTimeDamage < 1)
+        {
+            selfTimeDamage += Time.deltaTime;
+        }
+        if (onDamage)
+        {
+            if (selfTimeDamage > 0.2f)
+            {
+                SpriteRenderer img = gameObject.GetComponent<SpriteRenderer>();
+                img.color = Color.white;
+
+                selfTimeDamage = 0;
+
+                onDamage = false;
+            }
+        }
+
     }
 
     public void SetEnemyHp(int i)
@@ -24,5 +48,15 @@ public class EnemyLifeAndDeath : MonoBehaviour
     public int GetEnemyHp()
     {
         return enemyHP;
+    }
+
+    public void SetSelfTimerDamage(float i)
+    {
+        selfTimeDamage = i;
+    }
+
+    public void SetOnDamage(bool i)
+    {
+        onDamage = i;
     }
 }

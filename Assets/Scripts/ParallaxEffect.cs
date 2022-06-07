@@ -112,9 +112,10 @@ public class ParallaxEffect : MonoBehaviour
     //3 - 0.5 0.7 1
     //4 - 0.7 0.8 3
     */
+    /*
 
     //Tentativa mesclada
-    /*
+    
     private Transform cam;
     public float moveY;
     public float distYcamCenter;
@@ -231,7 +232,8 @@ public class ParallaxEffect : MonoBehaviour
 
     }
     */
-    // Para camera perspectiva
+    
+    // Somente reposicionamento
     private Transform cam;
     private float length;
     private float startPos;
@@ -261,6 +263,7 @@ public class ParallaxEffect : MonoBehaviour
         }
 
     }
+    
 
 
 }

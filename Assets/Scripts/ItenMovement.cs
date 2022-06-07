@@ -7,9 +7,9 @@ public class ItenMovement : MonoBehaviour
     public bool moveUp = true;
     IEnumerator Revert()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         moveUp = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         moveUp = true;
     }
     void Update()
@@ -17,11 +17,11 @@ public class ItenMovement : MonoBehaviour
         if (moveUp)
         {
             StartCoroutine("Revert");
-            transform.position = new Vector2(transform.position.x, transform.position.y + 1 * Time.deltaTime);
+            transform.position = new Vector2(transform.position.x, transform.position.y + 0.3f * Time.deltaTime);
         }
         else
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y - 1 * Time.deltaTime);
+            transform.position = new Vector2(transform.position.x, transform.position.y - 0.3f * Time.deltaTime);
         }
     }
 }

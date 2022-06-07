@@ -85,6 +85,7 @@ public class Move2D : MonoBehaviour
         Pause();
         Respawn();
         AttBatteryHUD();
+        DustMirrorMovement();
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -121,6 +122,24 @@ public class Move2D : MonoBehaviour
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 animator.SetBool("Running", false);
+            }
+        }
+    }
+
+    void DustMirrorMovement()
+    {
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (isGrounded)
+            {
+                DustEffect();
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (isGrounded)
+            {
+                DustEffect();
             }
         }
     }

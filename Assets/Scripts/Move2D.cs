@@ -9,7 +9,7 @@ public class Move2D : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed;
-    private float direction;
+    private float direction = 1;
     private Vector3 faceRight;
     private Vector3 faceLeft;
     public ParticleSystem dustEffect;

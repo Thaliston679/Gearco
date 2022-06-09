@@ -225,7 +225,7 @@ public class Move2D : MonoBehaviour
     //Se cair do cenário, volta pro checkpoint e perde 1hp
     public void Respawn()
     {
-        if (this.transform.position.y < -10) //"Morte"
+        if (this.transform.position.y < -9.5) //"Morte"
         {
             this.transform.position = spawnPoint;
             playerHP--;

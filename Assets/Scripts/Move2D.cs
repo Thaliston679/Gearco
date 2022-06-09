@@ -214,7 +214,7 @@ public class Move2D : MonoBehaviour
             animator.SetBool("IsFloor", false);
         }
 
-        if (rb.velocity.x >= 1 || rb.velocity.x <= -1)
+        if (rb.velocity.x != 0)
         {
             animator.SetBool("Running", true);
         }

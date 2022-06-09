@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -76,9 +76,453 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: atkAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1896
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e44aec5ca4f404aaf9c9a520380192
+      internalID: -1427315650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1896
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bfab5e9445155e4f80e90fc98198e49
+      internalID: -856303728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1896
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc157628c86e17149ad74c39762e7ab0
+      internalID: 2115120645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1580
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4131c5df0bc2a784d8e5446eba0f23ef
+      internalID: -450330178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1580
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20587bef1a61ec14baa5ebb00ddae484
+      internalID: -1557826924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1580
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95087ada6394374084b390372b16077
+      internalID: 981114924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1264
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6a89e964d8376489378be4d5aadba1
+      internalID: 988558994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1264
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: befecc936640f374da004f141cd9e6b8
+      internalID: -2046465607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1264
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b946b8df9b7b4a348bb71490063f074a
+      internalID: 1024348542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 948
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab458e0cb75d8bd42b735dfeebb87c59
+      internalID: -621409115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 948
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0b2a5064912c84b9484824c70e0692
+      internalID: -803955166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 948
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f83aa9985aec44458519e5a693ea4d4
+      internalID: -1183552385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 632
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 041ea34e5c6726147ab66c095ff49274
+      internalID: 218202203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 632
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447ef83dc0efba3418b18a9ad764fdf2
+      internalID: 1231199800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 632
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac93fc04494e09c4d996d5713ab22f2f
+      internalID: -1714929596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be36da71b61bb7e459ed2e3538fc85aa
+      internalID: 1269518382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_16
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 316
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400bd6d3b4baf6743a84ee0a3ac533f8
+      internalID: 1808429491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_17
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 316
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f56420fb4ae0dbd4c92354295e10e256
+      internalID: 772799438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a6176c46cd88c4db192dd26ccb803c
+      internalID: 561965304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkAnimation_19
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 0
+        width: 401
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c141b6268f463ce438fee41f00f745f4
+      internalID: -1267214629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +533,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      atkAnimation_4: -1557826924
+      atkAnimation_12: 218202203
+      atkAnimation_9: -621409115
+      atkAnimation_18: 561965304
+      atkAnimation_15: 1269518382
+      atkAnimation_3: -450330178
+      atkAnimation_8: 1024348542
+      atkAnimation_19: -1267214629
+      atkAnimation_14: -1714929596
+      atkAnimation_5: 981114924
+      atkAnimation_1: -856303728
+      atkAnimation_6: 988558994
+      atkAnimation_17: 772799438
+      atkAnimation_0: -1427315650
+      atkAnimation_7: -2046465607
+      atkAnimation_2: 2115120645
+      atkAnimation_11: -1183552385
+      atkAnimation_13: 1231199800
+      atkAnimation_16: 1808429491
+      atkAnimation_10: -803955166
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

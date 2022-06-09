@@ -39,7 +39,7 @@ public class Cacto : MonoBehaviour
     {
         float distance = Vector2.Distance(target.transform.position, transform.position);
 
-        Debug.Log(distance);
+        //Debug.Log(distance);
 
         if(distance <= 6)
         {

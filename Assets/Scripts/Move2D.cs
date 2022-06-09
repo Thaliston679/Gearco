@@ -109,20 +109,15 @@ public class Move2D : MonoBehaviour
             {
                 rb.velocity = new Vector2(speed, rb.velocity.y);
                 direction = 1;
-
-                animator.SetBool("Running", true);
             }
             else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 rb.velocity = new Vector2(-speed, rb.velocity.y);
                 direction = -1;
-
-                animator.SetBool("Running", true);
             }
             else
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
-                animator.SetBool("Running", false);
             }
         }
     }
@@ -219,7 +214,16 @@ public class Move2D : MonoBehaviour
             animator.SetBool("IsFloor", false);
         }
 
-        
+        if (rb.velocity.x >= 1 || rb.velocity.x <= -1)
+        {
+            animator.SetBool("Running", true);
+        }
+        else
+        {
+            animator.SetBool("Running", false);
+
+        }
+
     }
 
     //Se cair do cenário, volta pro checkpoint e perde 1hp
@@ -627,5 +631,17 @@ public class Move2D : MonoBehaviour
     public int GetPlayerHP()
     {
         return playerHP;
+    }
+
+    public bool GetCameraViewingSideRight()
+    {
+        if(direction > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

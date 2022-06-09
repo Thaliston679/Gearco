@@ -11,6 +11,7 @@ public class Lacraia : MonoBehaviour
     private bool actived = false;
     public Transform target;
     private float distance;
+    public float areaAggro;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class Lacraia : MonoBehaviour
         distance = Vector2.Distance(target.position, lacraia.transform.position);
 
         //Ativa ou desativa a lacraia
-        if(distance <= 5)
+        if(distance <= areaAggro)
         {
             actived = true;
         }

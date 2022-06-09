@@ -165,6 +165,7 @@ MonoBehaviour:
   lacraia: {fileID: 357854542814435766}
   animator: {fileID: 357854542814435753}
   target: {fileID: 0}
+  areaAggro: 5
 --- !u!1 &357854543808486413
 GameObject:
   m_ObjectHideFlags: 0

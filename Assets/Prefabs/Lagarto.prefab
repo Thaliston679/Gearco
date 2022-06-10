@@ -72,13 +72,13 @@ GameObject:
   m_Component:
   - component: {fileID: 9192805499016881159}
   - component: {fileID: 9192805499016881162}
-  - component: {fileID: 9192805499016881157}
   - component: {fileID: 9192805499016881156}
   - component: {fileID: 4430608642471647789}
   - component: {fileID: 2928012639384282476}
   - component: {fileID: 20341628204310963}
+  - component: {fileID: 2896266089417334525}
   m_Layer: 7
-  m_Name: AbIdleAnim_000
+  m_Name: lagarto
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 039de46b5cb443941952c0b2ddbbd2ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -151,26 +151,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &9192805499016881157
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9192805499016881158}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f90f1cd149599f740a92937f15ade18a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &9192805499016881156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +232,26 @@ PolygonCollider2D:
       - {x: 0.7786267, y: -1.3088053}
       - {x: -0.058534265, y: 0.01791358}
       - {x: -0.22942543, y: 1.0889585}
+--- !u!95 &2896266089417334525
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9192805499016881158}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d646727423fd3f45921aaff0a8c38b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9192805499184635314
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9192805499184635315}
   m_Layer: 7
-  m_Name: Abutre(antigo)
+  m_Name: Lagarto
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

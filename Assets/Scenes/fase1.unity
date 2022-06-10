@@ -6326,7 +6326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635314, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_Name
-      value: Abutre(antigo)
+      value: Lagarto
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635315, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_RootOrder
@@ -9791,7 +9791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635314, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_Name
-      value: Abutre(antigo)
+      value: Lagarto
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635315, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_RootOrder
@@ -10640,7 +10640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635314, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_Name
-      value: Abutre(antigo)
+      value: Lagarto
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635315, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_RootOrder
@@ -12315,7 +12315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635314, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_Name
-      value: Abutre(antigo)
+      value: Lagarto
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635315, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_RootOrder
@@ -141597,7 +141597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635314, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_Name
-      value: Abutre(antigo)
+      value: Lagarto
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635315, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_RootOrder
@@ -141662,7 +141662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635314, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_Name
-      value: Abutre(antigo)
+      value: Lagarto
       objectReference: {fileID: 0}
     - target: {fileID: 9192805499184635315, guid: c0cf933e41241f24297a21e12bad1b0b, type: 3}
       propertyPath: m_RootOrder

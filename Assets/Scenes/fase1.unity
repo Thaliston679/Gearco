@@ -11088,7 +11088,7 @@ GameObject:
   - component: {fileID: 471002588}
   - component: {fileID: 471002587}
   m_Layer: 5
-  m_Name: ConfigB
+  m_Name: ReiniciarB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11161,7 +11161,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1984195058}
         m_TargetAssemblyTypeName: GameObjectManager, Assembly-CSharp
-        m_MethodName: Settings
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -136756,7 +136756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ajustes
+  m_text: Reiniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 638af52ab6f7215499baf7bac1668124, type: 2}
   m_sharedMaterial: {fileID: -9098921019910692342, guid: 638af52ab6f7215499baf7bac1668124, type: 2}

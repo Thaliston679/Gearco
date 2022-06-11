@@ -321,7 +321,7 @@ public class Move2D : MonoBehaviour
             Tilemap tilemap = collision.GetComponent<Tilemap>();
             if (tilemap != null)
             {
-                tilemap.color = new Color(0.9176471f, 0.6156863f, 0.3490196f, 0.25f);
+                tilemap.color = new Color(0.9176471f, 0.6745098f, 0.4588235f, 0.25f);
             }
         }
     }
@@ -396,7 +396,7 @@ public class Move2D : MonoBehaviour
             Tilemap tilemap = collision.GetComponent<Tilemap>();
             if (tilemap != null)
             {
-                tilemap.color = new Color(0.9176471f, 0.6156863f, 0.3490196f, 1.0f);
+                tilemap.color = new Color(0.9176471f, 0.6745098f, 0.4588235f, 1.0f);
             }
         }
     }

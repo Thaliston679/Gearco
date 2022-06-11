@@ -29,7 +29,6 @@ public class Cacto : MonoBehaviour
                 GameObject thornBullet = Instantiate(thornBulletPrefab, thornOrigin.transform.position, thornOrigin.transform.rotation);
                 thornBullet.transform.eulerAngles = new Vector3(0, 0, i);
             }
-            Debug.Log("IEnumTest");
         }
         yield return new WaitForSeconds(1.25f);
         doShoot=false;

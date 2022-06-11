@@ -105,12 +105,12 @@ public class Move2D : MonoBehaviour
     {
         if (!lockMove)
         {
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || (Input.GetAxisRaw("Horizontal") > 0))
             {
                 rb.velocity = new Vector2(speed, rb.velocity.y);
                 direction = 1;
             }
-            else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || (Input.GetAxisRaw("Horizontal") < 0))
             {
                 rb.velocity = new Vector2(-speed, rb.velocity.y);
                 direction = -1;
@@ -143,18 +143,18 @@ public class Move2D : MonoBehaviour
     //Pulo do personagem
     void PlayerJump()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetButtonDown("JumpA"))
         {
             if (isGrounded || quicksandSinking)
             {
                 isJumping = true;
             }
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetButton("JumpA"))
         {
             counterJump -= Time.deltaTime;
         }
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetButtonUp("JumpA"))
         {
             isJumping = false;
             counterJump = 0.17f;
@@ -476,7 +476,7 @@ public class Move2D : MonoBehaviour
     {
         if (canShoot)
         {
-            if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("FireX"))
             {
                 canShoot = false;
                 Shoot();
@@ -587,7 +587,7 @@ public class Move2D : MonoBehaviour
 
     void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause7"))
         {
             if (isGrounded || quicksandSinking)
             {

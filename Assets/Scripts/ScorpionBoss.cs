@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class ScorpionBoss : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool movingRight = true;
+    public int speedBoss = 5;
+
+    public GameObject target;
+    public GameObject poisonBullet;
+
+    void MeleeAtk()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void RangeAtk()
     {
-        
+
+    }
+
+    void MoveBoss()
+    {
+
+    }
+
+    void IdleBoss()
+    {
+
     }
 }

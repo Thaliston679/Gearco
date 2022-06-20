@@ -6988,7 +6988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &250267650
 Transform:
   m_ObjectHideFlags: 0
@@ -11121,7 +11121,7 @@ GameObject:
   m_Layer: 0
   m_Name: forRight
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11133,7 +11133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468452684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -20, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11291,7 +11291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &471166119
 Animator:
   serializedVersion: 4
@@ -25462,7 +25462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &905654945
 Animator:
   serializedVersion: 4
@@ -136849,7 +136849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1572134985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -137952,6 +137952,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35527a79ca61c5f439e733a8e573cf92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedBoss: 5
+  target: {fileID: 0}
+  poisonBullet: {fileID: 0}
+  forRight: {fileID: 468452684}
+  forLeft: {fileID: 2003719987}
 --- !u!1 &1661749727
 GameObject:
   m_ObjectHideFlags: 0
@@ -141170,7 +141175,7 @@ GameObject:
   m_Layer: 0
   m_Name: forLeft
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -141182,7 +141187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003719987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

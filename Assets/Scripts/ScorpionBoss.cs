@@ -10,6 +10,9 @@ public class ScorpionBoss : MonoBehaviour
     public GameObject target;
     public GameObject poisonBullet;
 
+    public GameObject forRight;
+    public GameObject forLeft;
+
     void MeleeAtk()
     {
 

@@ -42,6 +42,7 @@ public class ScorpionBoss : MonoBehaviour
             GameObject impact = Instantiate(impactEffect, impactPos, Quaternion.identity);
             SpriteRenderer spriteRenderer = impact.GetComponent<SpriteRenderer>();
             spriteRenderer.flipX = false;
+            Destroy(impact, 0.5f);
         }
         else if (flipX)
         {
@@ -49,6 +50,7 @@ public class ScorpionBoss : MonoBehaviour
             GameObject impact = Instantiate(impactEffect, impactPos, Quaternion.identity);
             SpriteRenderer spriteRenderer = impact.GetComponent<SpriteRenderer>();
             spriteRenderer.flipX = true;
+            Destroy(impact, 0.5f);
         }
 
 

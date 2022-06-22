@@ -8,7 +8,6 @@ public class BulletControl : MonoBehaviour
     public GameObject bulletImpact;
     private GameObject enemyC;
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         transform.position = new Vector3(transform.position.x + bulletSpeed * 5.5f, transform.position.y, transform.position.z);

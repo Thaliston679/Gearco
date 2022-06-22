@@ -5,6 +5,8 @@ using UnityEngine;
 public class BulletPoison : MonoBehaviour
 {
     public GameObject player;
+    private Vector2 playerPos;
+    private Vector3 playerPosT;
     public GameObject poisonImpact;
 
     Rigidbody2D rb;
@@ -25,16 +27,29 @@ public class BulletPoison : MonoBehaviour
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speedRot);
+        playerPos = player.transform.position;
+        playerPosT = player.transform.position;
 
-        newMove = Vector2.MoveTowards(this.transform.position, player.transform.position, speedMov * Time.deltaTime);
+
     }
 
     private void FixedUpdate()
     {
         if (player != null)
         {
-            
+            /// Concertar (Fazer com que mova até bater em certa direção ao invés de posição)
+            newMove = Vector2.MoveTowards(this.transform.position, playerPos, speedMov * Time.deltaTime);
             rb.MovePosition(newMove);
+            ///
+            //rb.AddForce(newMove, ForceMode2D.Force);
+            //transform.Translate(playerPosT * speedMov * Time.deltaTime);
+
+            if (transform.position == playerPosT)
+            {
+                GameObject poisonImpactEffect = Instantiate(poisonImpact, transform.position, Quaternion.identity);
+                Destroy(gameObject, 0.1f);
+            }
+
         }
 
     }

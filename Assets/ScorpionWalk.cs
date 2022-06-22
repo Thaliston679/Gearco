@@ -32,7 +32,13 @@ public class ScorpionWalk : StateMachineBehaviour
             animator.SetTrigger("ImpactAtk");
         }
 
-        if (Vector2.Distance(player.position, rb.position) >= rangeAtkRange)
+        if (
+            (Vector2.Distance(player.position, rb.position) >= 8 && Vector2.Distance(player.position, rb.position) < 9)
+            ||
+            (Vector2.Distance(player.position, rb.position) >= 13 && Vector2.Distance(player.position, rb.position) < 14)
+            ||
+            (Vector2.Distance(player.position, rb.position) >= 16 && Vector2.Distance(player.position, rb.position) < 18)
+           )
         {
             animator.SetTrigger("RangeAtk");
         }

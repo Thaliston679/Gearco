@@ -54,9 +54,18 @@ public class ScorpionBoss : MonoBehaviour
 
     }
 
-    void RangeAtk()
+    public void RangeAtk()
     {
-
+        if (!flipX)
+        {
+            Vector3 poisonBulletPos = new Vector3(transform.position.x + 1.971f, transform.position.y + 2.642f, transform.position.z);
+            GameObject poisonBulletI = Instantiate(poisonBullet, poisonBulletPos, Quaternion.identity);
+        }
+        else if (flipX)
+        {
+            Vector3 poisonBulletPos = new Vector3(transform.position.x - 1.971f, transform.position.y + 2.642f, transform.position.z);
+            GameObject poisonBulletI = Instantiate(poisonBullet, poisonBulletPos, Quaternion.identity);
+        }
     }
 
     void MoveBoss()

@@ -6,6 +6,7 @@ public class ScorpionWalk : StateMachineBehaviour
 {
     public float speed = 3f;
     public float impactAtkRange = 5f;
+    public float rangeAtkRange = 15f;
     Transform player;
     Rigidbody2D rb;
     ScorpionBoss boss;
@@ -29,6 +30,11 @@ public class ScorpionWalk : StateMachineBehaviour
         if (Vector2.Distance(player.position, rb.position) <= impactAtkRange)
         {
             animator.SetTrigger("ImpactAtk");
+        }
+
+        if (Vector2.Distance(player.position, rb.position) >= rangeAtkRange)
+        {
+            animator.SetTrigger("RangeAtk");
         }
     }
 

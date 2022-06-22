@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 313925427403373816}
   - component: {fileID: 313925427403373819}
   - component: {fileID: -8964484939222617821}
+  - component: {fileID: 8385216891429943012}
   m_Layer: 0
   m_Name: ImpactEffectBoss
   m_TagString: Untagged
@@ -119,3 +120,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
+--- !u!60 &8385216891429943012
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313925427403373818}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 1, y: 0}
+    oldSize: {x: 3.6484375, y: 1.7578125}
+    newSize: {x: 9.34, y: 4.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.14, y: 0}
+      - {x: -2.53, y: 0}
+      - {x: -2.239522, y: 1.0507979}

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScorpionBoss : MonoBehaviour
 {
-    private bool movingRight = true;
     public int speedBoss = 5;
 
     public GameObject target;
@@ -38,7 +37,7 @@ public class ScorpionBoss : MonoBehaviour
     {
         if (!flipX)
         {
-            Vector3 impactPos = new Vector3(transform.position.x - 3f, transform.position.y, transform.position.z);
+            Vector3 impactPos = new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z);
             GameObject impact = Instantiate(impactEffect, impactPos, Quaternion.identity);
             SpriteRenderer spriteRenderer = impact.GetComponent<SpriteRenderer>();
             spriteRenderer.flipX = false;
@@ -46,7 +45,7 @@ public class ScorpionBoss : MonoBehaviour
         }
         else if (flipX)
         {
-            Vector3 impactPos = new Vector3(transform.position.x + 3f, transform.position.y, transform.position.z);
+            Vector3 impactPos = new Vector3(transform.position.x + 2.5f, transform.position.y, transform.position.z);
             GameObject impact = Instantiate(impactEffect, impactPos, Quaternion.identity);
             SpriteRenderer spriteRenderer = impact.GetComponent<SpriteRenderer>();
             spriteRenderer.flipX = true;

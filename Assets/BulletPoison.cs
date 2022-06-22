@@ -27,8 +27,8 @@ public class BulletPoison : MonoBehaviour
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speedRot);
-        playerPos = player.transform.position;
-        playerPosT = player.transform.position;
+        playerPos = new Vector3(player.transform.position.x, player.transform.position.y + 1f, player.transform.position.z);
+        playerPosT = new Vector3(player.transform.position.x, player.transform.position.y + 1f, player.transform.position.z);
 
 
     }

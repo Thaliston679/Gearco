@@ -27,6 +27,7 @@ public class Move2D : MonoBehaviour
     public GameObject panelMenuPause;
     public GameObject pauseButton;
     public GameObject panelGameOver;
+    public GameObject boss;
 
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
@@ -324,6 +325,12 @@ public class Move2D : MonoBehaviour
                 tilemap.color = new Color(0.9176471f, 0.6745098f, 0.4588235f, 0.25f);
             }
         }
+
+        if (collision.gameObject.CompareTag("BossRoom"))
+        {
+            this.transform.parent = collision.transform;
+            boss.SetActive(true);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -346,6 +353,23 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.CompareTag("plataformaH2")) //Plataforma flutuante V2
         {
             isGrounded = true;
+        }
+
+        if (collision.gameObject.CompareTag("BossDamage"))
+        {
+            if (vulnerable)
+            {
+                lockMove = true;
+                KnockBackTrigger(collision);
+
+                GameObject hitSpark = Instantiate(spark, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+                hitSpark.transform.parent = this.transform;
+
+                playerHP--;
+                AttBatteryHUD();
+                vulnerable = false;
+            }
+
         }
     }
 
@@ -450,6 +474,21 @@ public class Move2D : MonoBehaviour
     void KnockBack(Collision2D collision)
     {
         if(transform.position.x >= collision.transform.position.x)
+        {
+            direction = -1;
+            rb.AddForce(new Vector2(10, 15), ForceMode2D.Impulse);
+        }
+        else
+        {
+            direction = 1;
+            rb.AddForce(new Vector2(-10, 15), ForceMode2D.Impulse);
+        }
+        animator.SetBool("Damage", true);
+    }
+
+    void KnockBackTrigger(Collider2D collision)
+    {
+        if (transform.position.x >= collision.transform.position.x)
         {
             direction = -1;
             rb.AddForce(new Vector2(10, 15), ForceMode2D.Impulse);

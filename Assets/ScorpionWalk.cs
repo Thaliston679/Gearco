@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScorpionWalk : StateMachineBehaviour
 {
+    private bool movingRight = true;
     public float speed = 3f;
     public float impactAtkRange = 5f;
     public float rangeAtkRange = 15f;
@@ -22,10 +23,47 @@ public class ScorpionWalk : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        /*
         boss.FlipX();
         Vector2 target = new Vector2(player.position.x, rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.deltaTime);
         rb.MovePosition(newPos);
+        */
+
+        /*
+        if (Vector2.Distance(player.position, rb.position) >= 5 && Vector2.Distance(player.position, rb.position) < 10)
+        {
+            Vector2 target = new(player.position.x, rb.position.y);
+            Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.deltaTime);
+            rb.MovePosition(newPos);
+        }
+        else
+        {
+            float distPlayerBoss = (rb.position.x - player.position.x) + rb.position.x;
+            Vector2 target = new(distPlayerBoss, rb.position.y);
+            Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.deltaTime);
+            rb.MovePosition(newPos);
+        }
+        */
+
+        if (rb.transform.position.x < boss.forRight.transform.position.x)
+        {
+            movingRight = true;
+        }
+        if (rb.transform.position.x > boss.forLeft.transform.position.x)
+        {
+            movingRight = false;
+        }
+
+        if (movingRight)
+        {
+            rb.transform.position = new Vector2(rb.transform.position.x + speed * Time.deltaTime, rb.transform.position.y);
+        }
+        else
+        {
+            rb.transform.position = new Vector2(rb.transform.position.x - speed * Time.deltaTime, rb.transform.position.y);
+        }
+
 
         if (Vector2.Distance(player.position, rb.position) <= impactAtkRange)
         {
@@ -33,11 +71,9 @@ public class ScorpionWalk : StateMachineBehaviour
         }
 
         if (
-            (Vector2.Distance(player.position, rb.position) >= 8 && Vector2.Distance(player.position, rb.position) < 9)
-            ||
             (Vector2.Distance(player.position, rb.position) >= 13 && Vector2.Distance(player.position, rb.position) < 14)
             ||
-            (Vector2.Distance(player.position, rb.position) >= 16 && Vector2.Distance(player.position, rb.position) < 18)
+            (Vector2.Distance(player.position, rb.position) >= 18 && Vector2.Distance(player.position, rb.position) < 19)
            )
         {
             animator.SetTrigger("RangeAtk");
@@ -48,5 +84,6 @@ public class ScorpionWalk : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("ImpactAtk");
+        animator.ResetTrigger("RangeAtk");
     }
 }

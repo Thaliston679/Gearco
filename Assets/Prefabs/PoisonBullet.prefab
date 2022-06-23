@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5849206167171189002}
   m_Layer: 0
   m_Name: PoisonBullet
-  m_TagString: Enemy
+  m_TagString: BossDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

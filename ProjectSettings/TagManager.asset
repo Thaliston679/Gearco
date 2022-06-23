@@ -14,6 +14,9 @@ TagManager:
   - plataformaH2
   - checkPoint
   - Battery
+  - BossDamage
+  - BossRoom
+  - Boss
   layers:
   - Default
   - TransparentFX

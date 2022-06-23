@@ -371,6 +371,22 @@ public class Move2D : MonoBehaviour
             }
 
         }
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            if (vulnerable)
+            {
+                lockMove = true;
+                KnockBackTrigger(collision);
+
+                GameObject hitSpark = Instantiate(spark, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+                hitSpark.transform.parent = this.transform;
+
+                playerHP--;
+                AttBatteryHUD();
+                vulnerable = false;
+            }
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision) //Saindo da colisao com...

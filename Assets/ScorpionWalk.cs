@@ -5,9 +5,8 @@ using UnityEngine;
 public class ScorpionWalk : StateMachineBehaviour
 {
     private bool movingRight = true;
-    public float speed = 3f;
-    public float impactAtkRange = 5f;
-    public float rangeAtkRange = 15f;
+    private float speed = 3.5f;
+    private float impactAtkRange = 6f;
     Transform player;
     Rigidbody2D rb;
     ScorpionBoss boss;
@@ -63,7 +62,7 @@ public class ScorpionWalk : StateMachineBehaviour
         {
             rb.transform.position = new Vector2(rb.transform.position.x - speed * Time.deltaTime, rb.transform.position.y);
         }
-
+        Debug.Log(Vector2.Distance(player.position, rb.position));
 
         if (Vector2.Distance(player.position, rb.position) <= impactAtkRange)
         {
@@ -71,9 +70,9 @@ public class ScorpionWalk : StateMachineBehaviour
         }
 
         if (
-            (Vector2.Distance(player.position, rb.position) >= 13 && Vector2.Distance(player.position, rb.position) < 14)
+            (Vector2.Distance(player.position, rb.position) >= 10 && Vector2.Distance(player.position, rb.position) < 14)
             ||
-            (Vector2.Distance(player.position, rb.position) >= 18 && Vector2.Distance(player.position, rb.position) < 19)
+            (Vector2.Distance(player.position, rb.position) >= 18 && Vector2.Distance(player.position, rb.position) < 22)
            )
         {
             animator.SetTrigger("RangeAtk");

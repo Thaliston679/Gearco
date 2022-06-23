@@ -24,12 +24,14 @@ public class ScorpionBoss : MonoBehaviour
         if (transform.position.x > target.transform.position.x && flipX)
         {
             flipX = false;
-            img.flipX = flipX;
+            //img.flipX = flipX;
+            this.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z); 
         }
         else if (transform.position.x < target.transform.position.x && !flipX)
         {
             flipX = true;
-            img.flipX = flipX;
+            //img.flipX = flipX;
+            this.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z * -1f);
         }
     }
 

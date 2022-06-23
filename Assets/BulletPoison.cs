@@ -9,6 +9,8 @@ public class BulletPoison : MonoBehaviour
     private Vector3 playerPosT;
     public GameObject poisonImpact;
 
+    SpriteRenderer spriteRenderer;
+
     Rigidbody2D rb;
 
     public float speedRot;
@@ -20,11 +22,20 @@ public class BulletPoison : MonoBehaviour
 
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
-
+        Vector3 vectorToTarget = Vector3.zero;
         rb = GetComponent<Rigidbody2D>();
-        Vector3 vectorToTarget = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
+        
+        if (player.transform.position.x > transform.position.x) {
+            spriteRenderer.flipX = true;
+        }
+        else{
+            spriteRenderer.flipX = false;
+        }
+        
+        //float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
+        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speedRot);
         playerPos = new Vector3(player.transform.position.x, player.transform.position.y + 1f, player.transform.position.z);

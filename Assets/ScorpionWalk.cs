@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ScorpionWalk : StateMachineBehaviour
 {
-    private bool movingRight = true;
+    private bool movingRight = false;
     private float speed = 3.5f;
-    private float impactAtkRange = 6f;
+    private float impactAtkRange = 7f;
     Transform player;
     Rigidbody2D rb;
     ScorpionBoss boss;
@@ -45,6 +45,8 @@ public class ScorpionWalk : StateMachineBehaviour
         }
         */
 
+        
+        //boss.FlipX();
         if (rb.transform.position.x < boss.forRight.transform.position.x)
         {
             movingRight = true;
@@ -62,7 +64,8 @@ public class ScorpionWalk : StateMachineBehaviour
         {
             rb.transform.position = new Vector2(rb.transform.position.x - speed * Time.deltaTime, rb.transform.position.y);
         }
-        Debug.Log(Vector2.Distance(player.position, rb.position));
+        
+        
 
         if (Vector2.Distance(player.position, rb.position) <= impactAtkRange)
         {

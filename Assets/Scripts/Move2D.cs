@@ -37,6 +37,7 @@ public class Move2D : MonoBehaviour
     
     private int deathCounter = 0;
     private int disketsCollected = 0;
+    private int deadEnemies = 0;
 
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
@@ -664,7 +665,10 @@ public class Move2D : MonoBehaviour
     //Conquistas
     void Achievements()
     {
-        //
+        if(deadEnemies >= 1)
+        {
+            CallAchievementPopUp(6);
+        }
     }
 
     //Aplica efeito de fumaça nos pés
@@ -701,9 +705,12 @@ public class Move2D : MonoBehaviour
 
     void CallAchievementPopUp(int a)
     {
-        achievement.achievementID = a;
-        achievement.achievementLockList[a-1] = a;
-        achievement.animator.SetTrigger("AchivementUnlock");
+        if (achievement.achievementLockList[a-1] == 0)
+        {
+            achievement.achievementID = a;
+            achievement.achievementLockList[a - 1] = a;
+            achievement.animator.SetTrigger("AchivementUnlock");
+        }
     }
 
     public void SetSpawnPoint(Vector3 a)
@@ -736,5 +743,15 @@ public class Move2D : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public int GetDeadEnemies()
+    {
+        return deadEnemies;
+    }
+
+    public void SetDeadEnemies(int a)
+    {
+        deadEnemies = a;
     }
 }

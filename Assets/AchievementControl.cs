@@ -24,7 +24,7 @@ public class AchievementControl : MonoBehaviour
 
     void Start()
     {
-        achievementLockList = new int[5] {0, 0, 0, 0, 0};
+        achievementLockList = new int[] {0, 0, 0, 0, 0, 0};
         move2D = player.GetComponent<Move2D>();
         textMeshProUiGUITitle = achievementTitleBox.GetComponent<TextMeshProUGUI>();
         textMeshProUiGUIText = achievementTextBox.GetComponent<TextMeshProUGUI>();
@@ -62,7 +62,7 @@ public class AchievementControl : MonoBehaviour
                 achievementText = "Nade por 30 segundos na areia movediça";
                 break;
             case 5:
-                achievementTitle = "Colecionador de Meteorito";
+                achievementTitle = "Colecionador"; //Colecionador de Meteoritos
                 achievementText = "Colete todos os meteoritos espalhados por Pethasvya";
                 break;
             case 6:

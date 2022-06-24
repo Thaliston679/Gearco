@@ -2,19 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyLifeAndDeath : MonoBehaviour
+public class EnemyBossLifeAndDeath : MonoBehaviour
 {
     public int enemyHP;
     public GameObject smokeExplosion;
     private float selfTimeDamage = 0;
     private bool onDamage = false;
-
-    Move2D move2D;
-
-    private void Start()
-    {
-        move2D = GameObject.FindGameObjectWithTag("Player").GetComponent<Move2D>();
-    }
 
     void Update()
     {
@@ -22,7 +15,7 @@ public class EnemyLifeAndDeath : MonoBehaviour
         {
             GameObject explosion = Instantiate(smokeExplosion, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-            move2D.SetDeadEnemies(move2D.GetDeadEnemies() + 1);
+
 
         }
         TimerDamage();

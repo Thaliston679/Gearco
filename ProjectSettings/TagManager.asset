@@ -18,6 +18,7 @@ TagManager:
   - BossRoom
   - Boss
   - Achievement
+  - Meteor
   layers:
   - Default
   - TransparentFX

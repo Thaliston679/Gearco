@@ -47,7 +47,7 @@ public class GameObjectManager : MonoBehaviour
         GameObject itensSpawn = Instantiate(itens, new(0, 0, 0), Quaternion.identity);
 
         GameObject bosss = GameObject.FindGameObjectWithTag("Boss");
-        player.GetComponent<Move2D>().boss = bosss;
+        player.GetComponent<Move2D>().SetBoss(bosss);
 
         bosss.SetActive(false);
     }

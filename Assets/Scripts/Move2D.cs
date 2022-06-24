@@ -85,9 +85,6 @@ public class Move2D : MonoBehaviour
         Time.timeScale = 0;
 
         achievement = GameObject.FindGameObjectWithTag("Achievement").GetComponent<AchievementControl>();
-
-        GameObject bosss = GameObject.FindGameObjectWithTag("Boss");
-        boss = bosss;
         boss.SetActive(false);
     }
 

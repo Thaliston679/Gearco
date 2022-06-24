@@ -6783,7 +6783,7 @@ MonoBehaviour:
   panelMenuPause: {fileID: 681401636}
   pauseButton: {fileID: 1085899673}
   panelGameOver: {fileID: 1186202208}
-  boss: {fileID: 0}
+  boss: {fileID: 1655340050}
   EnemiesGenerator: {fileID: 0}
   onAchievement: 0
   isJumping: 0
@@ -145925,6 +145925,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1655340050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7678755060993634644, guid: 149b38756a58c1b4892ce8e5248cfc3c, type: 3}
+  m_PrefabInstance: {fileID: 7678755060417318214}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1661749727
 GameObject:
   m_ObjectHideFlags: 0
@@ -152065,6 +152070,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 212305239}
+    - target: {fileID: 7678755060993634644, guid: 149b38756a58c1b4892ce8e5248cfc3c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149b38756a58c1b4892ce8e5248cfc3c, type: 3}
 --- !u!1 &7984225436003754740

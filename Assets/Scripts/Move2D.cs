@@ -28,7 +28,6 @@ public class Move2D : MonoBehaviour
     public GameObject pauseButton;
     public GameObject panelGameOver;
     public GameObject boss;
-    public GameObject EnemiesGenerator;
 
 
     //Conquistas

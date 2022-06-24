@@ -40,16 +40,21 @@ public class GameObjectManager : MonoBehaviour
         player.GetComponent<Move2D>().SetDeathCounter(player.GetComponent<Move2D>().GetDeathCounter() + 1);
 
         player.transform.parent = null;
-        Destroy(GameObject.FindGameObjectWithTag("BossRoom"));
+        //Destroy(GameObject.FindGameObjectWithTag("BossRoom"));
         Destroy(GameObject.FindGameObjectWithTag("ItensSpawner"));
 
-        GameObject bossSpawn = Instantiate(boss, new(225.94f, -4f,0), Quaternion.identity);
+        //GameObject bossSpawn = Instantiate(boss, new(225.94f, -4f,0), Quaternion.identity);
         GameObject itensSpawn = Instantiate(itens, new(0, 0, 0), Quaternion.identity);
 
-        GameObject bosss = GameObject.FindGameObjectWithTag("Boss");
-        player.GetComponent<Move2D>().SetBoss(bosss);
+        //GameObject bosss = GameObject.FindGameObjectWithTag("Boss");
+        //player.GetComponent<Move2D>().SetBoss(bosss);
 
-        bosss.SetActive(false);
+        //bosss.SetActive(false);
+
+        EnemyBossLifeAndDeath enemyBossLifeAndDeath = boss.GetComponent<EnemyBossLifeAndDeath>();
+        enemyBossLifeAndDeath.enemyHP = 25;
+        boss.transform.position = new(225.94f, -4f, 0);
+        boss.SetActive(false);
     }
 
     public void Play()

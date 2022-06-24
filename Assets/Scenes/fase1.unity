@@ -6784,7 +6784,6 @@ MonoBehaviour:
   pauseButton: {fileID: 1085899673}
   panelGameOver: {fileID: 1186202208}
   boss: {fileID: 1655340050}
-  EnemiesGenerator: {fileID: 0}
   onAchievement: 0
   isJumping: 0
   jumpSpeed: 17.5
@@ -149154,7 +149153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 212305239}
-  boss: {fileID: 7678755060251264327, guid: 149b38756a58c1b4892ce8e5248cfc3c, type: 3}
+  boss: {fileID: 1655340050}
   itens: {fileID: 3119491878129074910, guid: 4c9c1483e04403f48b98e4f8ba6da390, type: 3}
 --- !u!1 &1988604613
 GameObject:

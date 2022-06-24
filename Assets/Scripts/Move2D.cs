@@ -28,7 +28,7 @@ public class Move2D : MonoBehaviour
     public GameObject pauseButton;
     public GameObject panelGameOver;
     public GameObject boss;
-
+    public GameObject EnemiesGenerator;
 
 
     //Conquistas
@@ -37,6 +37,7 @@ public class Move2D : MonoBehaviour
     
     private int deathCounter = 0;
     private int disketsCollected = 0;
+    private int meteorsCollected = 0;
     private int deadEnemies = 0;
 
     //Pulo de altura variavel
@@ -291,6 +292,12 @@ public class Move2D : MonoBehaviour
             }
         }
 
+        if (collision.gameObject.CompareTag("Meteor"))
+        {
+            Destroy(collision.gameObject);
+            meteorsCollected++;
+        }
+
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
         {
             if(rb.transform.position.y > collision.transform.position.y + 0.2f)
@@ -344,6 +351,7 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.CompareTag("BossRoom"))
         {
             this.transform.parent = collision.transform;
+            boss = GameObject.FindGameObjectWithTag("Boss");
             boss.SetActive(true);
         }
     }
@@ -505,7 +513,7 @@ public class Move2D : MonoBehaviour
     void TimerSandSinking()
     {
         timerSandSinking += Time.deltaTime;
-        if (timerSandSinking > 1f)
+        if (timerSandSinking > 30f)
         {
             if(achievement.achievementLockList[3] == 0)
             {
@@ -641,6 +649,7 @@ public class Move2D : MonoBehaviour
         spawnPoint = flagPos;
         GameObject flag = Instantiate(flagCheck, new Vector3(flagPos.x,flagPos.y - 1.02f,flagPos.z), Quaternion.identity);
         Destroy(collision.gameObject);
+        disketsCollected++;
         if (playerHP < 3)
         {
             playerHP = 3;
@@ -753,5 +762,15 @@ public class Move2D : MonoBehaviour
     public void SetDeadEnemies(int a)
     {
         deadEnemies = a;
+    }
+
+    public int GetDeathCounter()
+    {
+        return deathCounter;
+    }
+
+    public void SetDeathCounter(int a)
+    {
+        deathCounter = a;
     }
 }

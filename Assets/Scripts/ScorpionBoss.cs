@@ -18,6 +18,7 @@ public class ScorpionBoss : MonoBehaviour
     private void Start()
     {
         img = GetComponent<SpriteRenderer>();
+        target = GameObject.FindGameObjectWithTag("Player");
     }
     public void FlipX()
     {

@@ -19,6 +19,8 @@ TagManager:
   - Boss
   - Achievement
   - Meteor
+  - ItensSpawner
+  - EnemiesSpawner
   layers:
   - Default
   - TransparentFX

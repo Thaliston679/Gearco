@@ -29,6 +29,8 @@ public class Move2D : MonoBehaviour
     public GameObject panelGameOver;
     public GameObject boss;
 
+    public bool onAchievement = false;
+
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
     public bool isJumping;
@@ -45,6 +47,7 @@ public class Move2D : MonoBehaviour
     public int playerHP = 10;
 
     private float selfTimeDamage = 0;
+    private float timerSandSinking = 0;
     [SerializeField] private bool vulnerable = true;
 
     [Header("Tiro do personagem")]
@@ -98,6 +101,7 @@ public class Move2D : MonoBehaviour
         if (quicksandSinking)
         {
             rb.velocity = new Vector2(rb.velocity.x, -0.95f);
+            TimerSandSinking();
         }       
     }
 
@@ -315,6 +319,7 @@ public class Move2D : MonoBehaviour
         {
             quicksandSinking = true;
             speed /= 2;
+            timerSandSinking = 0;
         }
 
         if (collision.gameObject.CompareTag("TilemapForeground"))
@@ -427,6 +432,7 @@ public class Move2D : MonoBehaviour
         if (collision.gameObject.CompareTag("Quicksand")) //Areia movedica
         {
             quicksandSinking = false;
+            timerSandSinking = 0;
             speed *= 2;
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed/2);
         }
@@ -485,7 +491,19 @@ public class Move2D : MonoBehaviour
             lockMove = false;
         }
     }
-    
+
+    void TimerSandSinking()
+    {
+        timerSandSinking += Time.deltaTime;
+        if (timerSandSinking > 10f)
+        {
+            AchievementControl achievement = GetComponent<AchievementControl>();
+            achievement.SetAchievementID(3);
+            achievement.animator.SetTrigger("AchivementUnlock");
+            timerSandSinking = 0;
+        }
+    }
+
     //Kncokback sofrido ao levar dano(move o personagem para cima e para trás do inimigo que causou dano)
     void KnockBack(Collision2D collision)
     {
@@ -644,21 +662,18 @@ public class Move2D : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause7"))
         {
-            if (isGrounded || quicksandSinking)
+            if (Time.timeScale == 1)
             {
-                if (Time.timeScale == 1)
-                {
-                    Time.timeScale = 0;
-                    panelMenuPause.SetActive(true);
-                    pauseButton.SetActive(false);
+                Time.timeScale = 0;
+                panelMenuPause.SetActive(true);
+                pauseButton.SetActive(false);
 
-                }
-                else if (Time.timeScale == 0)
-                {
-                    Time.timeScale = 1;
-                    panelMenuPause.SetActive(false);
-                    pauseButton.SetActive(true);
-                }
+            }
+            else if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                panelMenuPause.SetActive(false);
+                pauseButton.SetActive(true);
             }
         }
     }

@@ -1,26 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AchievementControl : MonoBehaviour
 {
+    public GameObject player;
+    private Move2D move2D;
+    public Animator animator;
+
     private string achievementTitle;
     private string achievementText;
-    private int achievementID;
+
+    public GameObject achievementTitleBox;
+    public GameObject achievementTextBox;
+
+    TextMeshProUGUI textMeshProUiGUITitle;
+    TextMeshProUGUI textMeshProUiGUIText;
+
+    private int achievementID = 0;
 
 
     void Start()
     {
-        
+        move2D = player.GetComponent<Move2D>();
+        textMeshProUiGUITitle = achievementTitleBox.GetComponent<TextMeshProUGUI>();
+        textMeshProUiGUIText = achievementTextBox.GetComponent<TextMeshProUGUI>();
+
+        OnAchievement();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (move2D.onAchievement)
+        {
+            animator.SetTrigger("AchivementUnlock");
+        }
     }
 
-    void OnAchievement()
+    public void OnAchievement()
     {
         switch (achievementID)
         {
@@ -46,6 +65,9 @@ public class AchievementControl : MonoBehaviour
                 break;
 
         }
+
+        textMeshProUiGUITitle.text = achievementTitle;
+        textMeshProUiGUIText.text = achievementText;
     }
 
     public string GetAchievementTitle()

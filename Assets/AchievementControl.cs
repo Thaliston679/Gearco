@@ -65,6 +65,10 @@ public class AchievementControl : MonoBehaviour
                 achievementTitle = "Colecionador de Meteorito";
                 achievementText = "Colete todos os meteoritos espalhados por Pethasvya";
                 break;
+            case 6:
+                achievementTitle = "Limpando a área";
+                achievementText = "Elimine todas as ameaças menores";
+                break;
 
         }
 

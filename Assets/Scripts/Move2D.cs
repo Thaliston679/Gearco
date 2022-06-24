@@ -29,9 +29,14 @@ public class Move2D : MonoBehaviour
     public GameObject panelGameOver;
     public GameObject boss;
 
-    AchievementControl achievement;
 
+
+    //Conquistas
+    AchievementControl achievement;
     public bool onAchievement = false;
+    
+    private int deathCounter = 0;
+    private int disketsCollected = 0;
 
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
@@ -503,9 +508,7 @@ public class Move2D : MonoBehaviour
         {
             if(achievement.achievementLockList[3] == 0)
             {
-                achievement.achievementID = 4;
-                achievement.achievementLockList[3] = 4;
-                achievement.animator.SetTrigger("AchivementUnlock");
+                CallAchievementPopUp(4);
                 timerSandSinking = 0;
             }
         }
@@ -643,6 +646,12 @@ public class Move2D : MonoBehaviour
             AttBatteryHUD();
         }
 
+        disketsCollected++;
+        if(disketsCollected >= 5)
+        {
+            CallAchievementPopUp(1);
+        }
+
     }
 
     //Redefine os valores de vida e spawnPoint
@@ -688,6 +697,13 @@ public class Move2D : MonoBehaviour
     public void AttBatteryHUD()
     {
         batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
+    }
+
+    void CallAchievementPopUp(int a)
+    {
+        achievement.achievementID = a;
+        achievement.achievementLockList[a-1] = a;
+        achievement.animator.SetTrigger("AchivementUnlock");
     }
 
     public void SetSpawnPoint(Vector3 a)

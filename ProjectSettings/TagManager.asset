@@ -17,6 +17,7 @@ TagManager:
   - BossDamage
   - BossRoom
   - Boss
+  - Achievement
   layers:
   - Default
   - TransparentFX

@@ -18,11 +18,13 @@ public class AchievementControl : MonoBehaviour
     TextMeshProUGUI textMeshProUiGUITitle;
     TextMeshProUGUI textMeshProUiGUIText;
 
-    private int achievementID = 0;
+    public int achievementID = 0;
+    public int[] achievementLockList;
 
 
     void Start()
     {
+        achievementLockList = new int[5] {0, 0, 0, 0, 0};
         move2D = player.GetComponent<Move2D>();
         textMeshProUiGUITitle = achievementTitleBox.GetComponent<TextMeshProUGUI>();
         textMeshProUiGUIText = achievementTextBox.GetComponent<TextMeshProUGUI>();
@@ -43,23 +45,23 @@ public class AchievementControl : MonoBehaviour
     {
         switch (achievementID)
         {
-            case 0:
+            case 1:
                 achievementTitle = "Historiador";
                 achievementText = "Colete todos os diskets da história de Pethasvya";
                 break;
-            case 1:
+            case 2:
                 achievementTitle = "Protótipo Perfeito";
                 achievementText = "Finalize o jogo sem morrer";
                 break;
-            case 2:
+            case 3:
                 achievementTitle = "Herói de ferro";
                 achievementText = "Derrote o escorpião";
                 break;
-            case 3:
+            case 4:
                 achievementTitle = "Pernas de aço";
                 achievementText = "Nade por 30 segundos na areia movediça";
                 break;
-            case 4:
+            case 5:
                 achievementTitle = "Colecionador de Meteorito";
                 achievementText = "Colete todos os meteoritos espalhados por Pethasvya";
                 break;

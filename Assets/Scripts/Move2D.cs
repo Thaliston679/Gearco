@@ -29,6 +29,8 @@ public class Move2D : MonoBehaviour
     public GameObject panelGameOver;
     public GameObject boss;
 
+    AchievementControl achievement;
+
     public bool onAchievement = false;
 
     //Pulo de altura variavel
@@ -74,6 +76,8 @@ public class Move2D : MonoBehaviour
         faceLeft.x = faceLeft.x * -1;
 
         Time.timeScale = 0;
+
+        achievement = GameObject.FindGameObjectWithTag("Achievement").GetComponent<AchievementControl>();
     }
 
     void Update()
@@ -495,12 +499,15 @@ public class Move2D : MonoBehaviour
     void TimerSandSinking()
     {
         timerSandSinking += Time.deltaTime;
-        if (timerSandSinking > 10f)
+        if (timerSandSinking > 1f)
         {
-            AchievementControl achievement = GetComponent<AchievementControl>();
-            achievement.SetAchievementID(3);
-            achievement.animator.SetTrigger("AchivementUnlock");
-            timerSandSinking = 0;
+            if(achievement.achievementLockList[3] == 0)
+            {
+                achievement.achievementID = 4;
+                achievement.achievementLockList[3] = 4;
+                achievement.animator.SetTrigger("AchivementUnlock");
+                timerSandSinking = 0;
+            }
         }
     }
 

@@ -144287,7 +144287,7 @@ GameObject:
   - component: {fileID: 6673719987765836659}
   m_Layer: 5
   m_Name: Achievements
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150784,8 +150784,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 212305239}
+  animator: {fileID: 6673719987765836658}
   achievementTitleBox: {fileID: 7064690080111396194}
   achievementTextBox: {fileID: 5655015541062708305}
+  achievementID: 0
+  achievementLockList: 
 --- !u!224 &6975346226599446653
 RectTransform:
   m_ObjectHideFlags: 0

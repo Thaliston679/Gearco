@@ -15,6 +15,7 @@ public class BulletPoison : MonoBehaviour
 
     public float speedRot;
     public float speedMov;
+    private bool destroyed = false;
 
     public float rotationModifier;
 
@@ -55,10 +56,11 @@ public class BulletPoison : MonoBehaviour
             //rb.AddForce(newMove, ForceMode2D.Force);
             //transform.Translate(playerPosT * speedMov * Time.deltaTime);
 
-            if (transform.position == playerPosT)
+            if (transform.position == playerPosT && !destroyed)
             {
+                destroyed = true;
+                Destroy(gameObject);
                 GameObject poisonImpactEffect = Instantiate(poisonImpact, transform.position, Quaternion.identity);
-                Destroy(gameObject, 0.1f);
             }
 
         }

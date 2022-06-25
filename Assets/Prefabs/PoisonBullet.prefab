@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  poisonImpact: {fileID: 2246861826083040448, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
+  poisonImpact: {fileID: 2246861826083040448, guid: ccdf18ebdf954114bba3eb389780c483, type: 3}
   speedRot: 20
   speedMov: 10
   rotationModifier: 180
@@ -176,4 +176,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 1
-  smokeExplosion: {fileID: 2246861826083040448, guid: 16eda432054ec1e48bd36755132c3456, type: 3}
+  smokeExplosion: {fileID: 2246861826083040448, guid: ccdf18ebdf954114bba3eb389780c483, type: 3}

@@ -11,8 +11,8 @@ public class EnemyBulletDeath : MonoBehaviour
     {
         if(enemyHP <= 0)
         {
-            GameObject explosion = Instantiate(smokeExplosion, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+            GameObject explosion = Instantiate(smokeExplosion, this.transform.position, Quaternion.identity);
         }
     }
     public void SetEnemyHp(int i)

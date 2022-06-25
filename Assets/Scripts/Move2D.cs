@@ -249,6 +249,7 @@ public class Move2D : MonoBehaviour
         if (this.transform.position.y < -9.5) //"Morte"
         {
             this.transform.position = spawnPoint;
+            this.transform.position = new(transform.position.x, transform.position.y, 0);
             playerHP--;
             AttBatteryHUD();
         }
@@ -666,7 +667,7 @@ public class Move2D : MonoBehaviour
     {
         Vector3 flagPos = collision.gameObject.GetComponent<ItenMovement>().GetStartPosistion();
         spawnPoint = flagPos;
-        GameObject flag = Instantiate(flagCheck, new Vector3(flagPos.x,flagPos.y - 1.02f,flagPos.z), Quaternion.identity);
+        GameObject flag = Instantiate(flagCheck, new Vector3(flagPos.x,flagPos.y - 1.02f,0), Quaternion.identity);
         Destroy(collision.gameObject);
         if (playerHP < 3)
         {

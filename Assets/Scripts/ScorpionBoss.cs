@@ -71,14 +71,4 @@ public class ScorpionBoss : MonoBehaviour
             GameObject poisonBulletI = Instantiate(poisonBullet, poisonBulletPos, Quaternion.identity);
         }
     }
-
-    void MoveBoss()
-    {
-
-    }
-
-    void IdleBoss()
-    {
-
-    }
 }

@@ -40,6 +40,9 @@ public class GameObjectManager : MonoBehaviour
         player.GetComponent<Move2D>().SetDeathCounter(player.GetComponent<Move2D>().GetDeathCounter() + 1);
 
         player.transform.parent = null;
+
+        player.transform.position = new(player.transform.position.x, player.transform.position.y, 0);
+
         //Destroy(GameObject.FindGameObjectWithTag("BossRoom"));
         Destroy(GameObject.FindGameObjectWithTag("ItensSpawner"));
 

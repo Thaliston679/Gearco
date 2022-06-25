@@ -143911,7 +143911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6.37}
+  m_AnchoredPosition: {x: 0, y: 6.369999}
   m_SizeDelta: {x: 0, y: 12.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463843462
@@ -152024,6 +152024,10 @@ PrefabInstance:
       propertyPath: credits
       value: 
       objectReference: {fileID: 236599202}
+    - target: {fileID: 2896614451204422936, guid: 149b38756a58c1b4892ce8e5248cfc3c, type: 3}
+      propertyPath: smokeExplosion
+      value: 
+      objectReference: {fileID: 1403778199027520588, guid: d15bd165b174559449039337480405e4, type: 3}
     - target: {fileID: 7678755060251264324, guid: 149b38756a58c1b4892ce8e5248cfc3c, type: 3}
       propertyPath: m_RootOrder
       value: 13

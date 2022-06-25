@@ -6784,6 +6784,7 @@ MonoBehaviour:
   pauseButton: {fileID: 1085899673}
   panelGameOver: {fileID: 1186202208}
   boss: {fileID: 1655340050}
+  meteorEffect: {fileID: 6047232381553371988, guid: 3300911406b6ad4408b98acf4585e29d, type: 3}
   onAchievement: 0
   isJumping: 0
   jumpSpeed: 17.5
@@ -9451,6 +9452,7 @@ GameObject:
   - component: {fileID: 268274825}
   - component: {fileID: 268274824}
   - component: {fileID: 268274823}
+  - component: {fileID: 268274828}
   m_Layer: 0
   m_Name: Cavern5
   m_TagString: TilemapForeground
@@ -12515,6 +12517,26 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &268274828
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268274821}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd17ef52bf0a93248a83c4e5118f5e37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &272785904
 GameObject:
   m_ObjectHideFlags: 0
@@ -15923,6 +15945,7 @@ GameObject:
   - component: {fileID: 636850685}
   - component: {fileID: 636850684}
   - component: {fileID: 636850683}
+  - component: {fileID: 636850686}
   m_Layer: 0
   m_Name: Cavern4
   m_TagString: TilemapForeground
@@ -24447,6 +24470,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &636850686
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636850679}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd17ef52bf0a93248a83c4e5118f5e37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &637453168
 GameObject:
   m_ObjectHideFlags: 0
@@ -25347,6 +25390,7 @@ GameObject:
   - component: {fileID: 738815980}
   - component: {fileID: 738815979}
   - component: {fileID: 738815978}
+  - component: {fileID: 738815981}
   m_Layer: 0
   m_Name: Cavern3
   m_TagString: TilemapForeground
@@ -27341,6 +27385,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &738815981
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738815974}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd17ef52bf0a93248a83c4e5118f5e37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &741955055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35463,6 +35527,7 @@ GameObject:
   - component: {fileID: 1124836385}
   - component: {fileID: 1124836384}
   - component: {fileID: 1124836383}
+  - component: {fileID: 1124836386}
   m_Layer: 0
   m_Name: Cavern1
   m_TagString: TilemapForeground
@@ -46449,6 +46514,26 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: -0.5}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!95 &1124836386
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124836379}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd17ef52bf0a93248a83c4e5118f5e37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1130841307
 GameObject:
   m_ObjectHideFlags: 0
@@ -75119,6 +75204,7 @@ GameObject:
   - component: {fileID: 1240637759}
   - component: {fileID: 1240637758}
   - component: {fileID: 1240637757}
+  - component: {fileID: 1240637760}
   m_Layer: 0
   m_Name: Cavern2
   m_TagString: TilemapForeground
@@ -78243,6 +78329,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1240637760
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240637753}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd17ef52bf0a93248a83c4e5118f5e37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1244923185
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class Move2D : MonoBehaviour
     public GameObject pauseButton;
     public GameObject panelGameOver;
     public GameObject boss;
-
+    public GameObject meteorEffect;
 
     //Conquistas
     AchievementControl achievement;
@@ -297,6 +297,7 @@ public class Move2D : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Meteor"))
         {
+            GameObject meteorEffectI = Instantiate(meteorEffect, collision.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             meteorsCollected++;
             if(meteorsCollected >= 6)
@@ -351,7 +352,9 @@ public class Move2D : MonoBehaviour
             Tilemap tilemap = collision.GetComponent<Tilemap>();
             if (tilemap != null)
             {
-                tilemap.color = new Color(0.9176471f, 0.6745098f, 0.4588235f, 0.25f);
+                collision.GetComponent<Animator>().SetBool("Active", true);
+                collision.GetComponent<Animator>().SetBool("Desactive", false);
+                //tilemap.color = new Color(0.9176471f, 0.6745098f, 0.4588235f, 0.1f);
             }
         }
 
@@ -485,7 +488,9 @@ public class Move2D : MonoBehaviour
             Tilemap tilemap = collision.GetComponent<Tilemap>();
             if (tilemap != null)
             {
-                tilemap.color = new Color(0.9176471f, 0.6745098f, 0.4588235f, 1.0f);
+                collision.GetComponent<Animator>().SetBool("Desactive", true);
+                collision.GetComponent<Animator>().SetBool("Active", false);
+                //tilemap.color = new Color(0.9176471f, 0.6745098f, 0.4588235f, 1.0f);
             }
         }
     }

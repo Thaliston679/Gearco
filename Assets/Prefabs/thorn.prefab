@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6583804769711109493}
   - component: {fileID: 6055605482441907783}
   - component: {fileID: 1823982025889810239}
-  - component: {fileID: 6242267844536581195}
+  - component: {fileID: -4966557910531059998}
   m_Layer: 0
   m_Name: thorn
-  m_TagString: Enemy
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   destroyTime: 1.5
---- !u!114 &6242267844536581195
+--- !u!114 &-4966557910531059998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5787759100306143866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b584cc7acdbf53e4aac8458d6a9cf7ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 7790821ddb68740479eb7287bf0a1fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 1

@@ -21,6 +21,7 @@ TagManager:
   - Meteor
   - ItensSpawner
   - EnemiesSpawner
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

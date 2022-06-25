@@ -379,6 +379,23 @@ public class Move2D : MonoBehaviour
             isGrounded = true;
         }
 
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            if (vulnerable)
+            {
+                lockMove = true;
+                KnockBackTrigger(collision);
+
+                GameObject hitSpark = Instantiate(spark, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+                hitSpark.transform.parent = this.transform;
+
+                playerHP--;
+                AttBatteryHUD();
+                vulnerable = false;
+            }
+
+        }
+
         if (collision.gameObject.CompareTag("BossDamage"))
         {
             if (vulnerable)
@@ -395,6 +412,7 @@ public class Move2D : MonoBehaviour
             }
 
         }
+
         if (collision.gameObject.CompareTag("Boss"))
         {
             if (vulnerable)

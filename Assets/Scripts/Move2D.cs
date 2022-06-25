@@ -102,6 +102,7 @@ public class Move2D : MonoBehaviour
         Respawn();
         AttBatteryHUD();
         DustMirrorMovement();
+        Debug.Log(disketsCollected);
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -649,7 +650,6 @@ public class Move2D : MonoBehaviour
         spawnPoint = flagPos;
         GameObject flag = Instantiate(flagCheck, new Vector3(flagPos.x,flagPos.y - 1.02f,flagPos.z), Quaternion.identity);
         Destroy(collision.gameObject);
-        disketsCollected++;
         if (playerHP < 3)
         {
             playerHP = 3;

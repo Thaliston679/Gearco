@@ -38,6 +38,7 @@ public class Move2D : MonoBehaviour
     private int disketsCollected = 0;
     private int meteorsCollected = 0;
     private int deadEnemies = 0;
+    private int achievementsUnlocked;
 
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
@@ -102,7 +103,6 @@ public class Move2D : MonoBehaviour
         Respawn();
         AttBatteryHUD();
         DustMirrorMovement();
-        Debug.Log(disketsCollected);
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -716,6 +716,7 @@ public class Move2D : MonoBehaviour
     {
         if (achievement.achievementLockList[a-1] == 0)
         {
+            achievementsUnlocked++;
             achievement.achievementID = a;
             achievement.achievementLockList[a - 1] = a;
             achievement.animator.SetTrigger("AchivementUnlock");
@@ -782,5 +783,20 @@ public class Move2D : MonoBehaviour
     public void SetBoss(GameObject a)
     {
         boss = a;
+    }
+
+    public int GetDisketsCollected()
+    {
+        return disketsCollected;
+    }
+
+    public int GetMeteorsCollected()
+    {
+        return meteorsCollected;
+    }
+
+    public int GetAchievementsUnlocked()
+    {
+        return achievementsUnlocked;
     }
 }

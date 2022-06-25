@@ -151889,6 +151889,9 @@ MonoBehaviour:
   animator: {fileID: 6673719987765836658}
   achievementTitleBox: {fileID: 7064690080111396194}
   achievementTextBox: {fileID: 5655015541062708305}
+  disketsCounterBox: {fileID: 457534800}
+  achievsCounterBox: {fileID: 1680834559}
+  meteorsCounterBox: {fileID: 1682148844}
   achievementID: 0
   achievementLockList: 
 --- !u!224 &6975346226599446653

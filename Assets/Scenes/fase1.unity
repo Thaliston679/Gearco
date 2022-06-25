@@ -151418,8 +151418,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Descri\xE7\xE3o detalhada de como a conquista foi alcan\xE7ada."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 638af52ab6f7215499baf7bac1668124, type: 2}
-  m_sharedMaterial: {fileID: -9098921019910692342, guid: 638af52ab6f7215499baf7bac1668124, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 27830b527d3bd9544bbb73157317f75d, type: 2}
+  m_sharedMaterial: {fileID: 2563682500898965589, guid: 27830b527d3bd9544bbb73157317f75d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -151443,7 +151443,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 16
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -152123,8 +152123,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "T\xEDtulo da conquista"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 638af52ab6f7215499baf7bac1668124, type: 2}
-  m_sharedMaterial: {fileID: -9098921019910692342, guid: 638af52ab6f7215499baf7bac1668124, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 27830b527d3bd9544bbb73157317f75d, type: 2}
+  m_sharedMaterial: {fileID: 2563682500898965589, guid: 27830b527d3bd9544bbb73157317f75d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

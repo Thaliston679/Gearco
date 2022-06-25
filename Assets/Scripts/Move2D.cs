@@ -517,6 +517,40 @@ public class Move2D : MonoBehaviour
             }
       
         }
+
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            if (vulnerable)
+            {
+                lockMove = true;
+                KnockBack(collision);
+
+                GameObject hitSpark = Instantiate(spark, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+                hitSpark.transform.parent = this.transform;
+
+                playerHP--;
+                AttBatteryHUD();
+                vulnerable = false;
+            }
+
+        }
+
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            if (vulnerable)
+            {
+                lockMove = true;
+                KnockBack(collision);
+
+                GameObject hitSpark = Instantiate(spark, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+                hitSpark.transform.parent = this.transform;
+
+                playerHP--;
+                AttBatteryHUD();
+                vulnerable = false;
+            }
+
+        }
     }
 
     //Tmporizador de dano(Tempo invulnerável)

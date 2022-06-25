@@ -298,6 +298,10 @@ public class Move2D : MonoBehaviour
         {
             Destroy(collision.gameObject);
             meteorsCollected++;
+            if(meteorsCollected >= 6)
+            {
+                CallAchievementPopUp(5);
+            }
         }
 
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante

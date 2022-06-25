@@ -9,6 +9,7 @@ public class EnemyBossLifeAndDeath : MonoBehaviour
     private float selfTimeDamage = 0;
     private bool onDamage = false;
 
+    public GameObject credits;
     Move2D move2D;
 
     private void Start()
@@ -22,6 +23,9 @@ public class EnemyBossLifeAndDeath : MonoBehaviour
         {
             GameObject explosion = Instantiate(smokeExplosion, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+            move2D.SetLockMove(true);
+            move2D.CallAchievementPopUp(3);
+            credits.SetActive(true);
 
         }
         TimerDamage();

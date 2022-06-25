@@ -731,7 +731,7 @@ public class Move2D : MonoBehaviour
         batteryHUD.GetComponent<BatteryHUD>().HPBattery(playerHP);
     }
 
-    void CallAchievementPopUp(int a)
+    public void CallAchievementPopUp(int a)
     {
         if (achievement.achievementLockList[a-1] == 0)
         {
@@ -817,5 +817,15 @@ public class Move2D : MonoBehaviour
     public int GetAchievementsUnlocked()
     {
         return achievementsUnlocked;
+    }
+
+    public bool GetLockMove()
+    {
+        return lockMove;
+    }
+
+    public void SetLockMove(bool a)
+    {
+        lockMove = a;
     }
 }

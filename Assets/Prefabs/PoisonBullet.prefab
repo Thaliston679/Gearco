@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5849206167171188992}
   - component: {fileID: 5849206167171189005}
   - component: {fileID: 5849206167171189003}
-  - component: {fileID: 5849206167171189004}
   - component: {fileID: 4516715812017534114}
+  - component: {fileID: 4206574581487350059}
   m_Layer: 0
   m_Name: PoisonBullet
   m_TagString: EnemyBullet
@@ -147,22 +147,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5849206167171189004
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5849206167171188993}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
-  serializedVersion: 2
-  m_Radius: 0.53
 --- !u!114 &4516715812017534114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,3 +161,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHP: 1
   smokeExplosion: {fileID: 2246861826083040448, guid: ccdf18ebdf954114bba3eb389780c483, type: 3}
+--- !u!70 &4206574581487350059
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5849206167171188993}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.06}
+  m_Size: {x: 1.11, y: 0.71}
+  m_Direction: 1

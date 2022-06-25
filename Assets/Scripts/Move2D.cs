@@ -692,7 +692,7 @@ public class Move2D : MonoBehaviour
     //Conquistas
     void Achievements()
     {
-        if(deadEnemies >= 1)
+        if(deadEnemies >= 30)
         {
             CallAchievementPopUp(6);
         }

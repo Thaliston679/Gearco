@@ -23,7 +23,6 @@ public class EnemyLifeAndDeath : MonoBehaviour
             GameObject explosion = Instantiate(smokeExplosion, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             move2D.SetDeadEnemies(move2D.GetDeadEnemies() + 1);
-
         }
         TimerDamage();
     }

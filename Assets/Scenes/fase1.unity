@@ -13855,8 +13855,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Jogar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 638af52ab6f7215499baf7bac1668124, type: 2}
-  m_sharedMaterial: {fileID: -9098921019910692342, guid: 638af52ab6f7215499baf7bac1668124, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 62bc8b430fc9c514fa17e2db7e61e379, type: 2}
+  m_sharedMaterial: {fileID: -6322497721980705520, guid: 62bc8b430fc9c514fa17e2db7e61e379, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13880,8 +13880,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13890,7 +13890,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 2
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -145989,8 +145989,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sair
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 638af52ab6f7215499baf7bac1668124, type: 2}
-  m_sharedMaterial: {fileID: -9098921019910692342, guid: 638af52ab6f7215499baf7bac1668124, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 62bc8b430fc9c514fa17e2db7e61e379, type: 2}
+  m_sharedMaterial: {fileID: -6322497721980705520, guid: 62bc8b430fc9c514fa17e2db7e61e379, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -146014,8 +146014,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -146024,7 +146024,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 2
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -152158,7 +152158,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 1
+  m_characterSpacing: 2
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

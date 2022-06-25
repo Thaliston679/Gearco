@@ -91,7 +91,16 @@ public class AchievementControl : MonoBehaviour
                 achievementTitle = "Limpando a área";
                 achievementText = "Elimine todas as ameaças menores";
                 break;
-
+                /*
+                case 7:
+                    achievementTitle = "Sniper perfeito";
+                    achievementText = "Acerte 100% dos tiros";
+                    break;
+                case 8:
+                    achievementTitle = "Intangível";
+                    achievementText = "Não sofra nenhum arranhão";
+                    break;
+                 */
         }
 
         textMeshProUiGUITitle.text = achievementTitle;

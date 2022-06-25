@@ -103,6 +103,7 @@ public class Move2D : MonoBehaviour
         Respawn();
         AttBatteryHUD();
         DustMirrorMovement();
+        Debug.Log(deathCounter);
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -865,5 +866,15 @@ public class Move2D : MonoBehaviour
     public void SetLockMove(bool a)
     {
         lockMove = a;
+    }
+
+    public int GetAchievementID()
+    {
+        return achievement.achievementID;
+    }
+
+    public void SetAchievementID(int a)
+    {
+        achievement.achievementID = a;
     }
 }

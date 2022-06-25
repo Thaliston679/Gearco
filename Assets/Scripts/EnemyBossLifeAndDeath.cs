@@ -21,10 +21,20 @@ public class EnemyBossLifeAndDeath : MonoBehaviour
     {
         if (enemyHP <= 0)
         {
-            GameObject explosion = Instantiate(smokeExplosion, this.transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            Animator animator = this.gameObject.GetComponent<Animator>();
+            if (!animator.GetBool("Death"))
+            {
+                GameObject explosion = Instantiate(smokeExplosion, this.transform.position, Quaternion.identity);
+                animator.SetBool("Death", true);
+            }
+            
+            //Destroy(this.gameObject);
             move2D.SetLockMove(true);
             move2D.CallAchievementPopUp(3);
+            if(move2D.GetDeathCounter() == 0 && move2D.GetAchievementID() == 0)
+            {
+                move2D.CallAchievementPopUp(2);
+            }
             credits.SetActive(true);
 
         }

@@ -58,7 +58,7 @@ public class AchievementControl : MonoBehaviour
             animator.SetTrigger("AchivementUnlock");
         }
 
-        disketsCounter = move2D.GetDisketsCollected().ToString() + " / 5";
+        disketsCounter = move2D.GetDisketsCollected().ToString() + " / 6";
         achievsCounter = move2D.GetAchievementsUnlocked().ToString() + " / 6";
         achievsCounterCredits = move2D.GetAchievementsUnlocked().ToString() + " / 6";
         meteorsCounter = move2D.GetMeteorsCollected().ToString() + " / 6";

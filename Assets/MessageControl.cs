@@ -51,27 +51,27 @@ public class MessageControl : MonoBehaviour
                 break;
             case 2:
                 messageTitle = "Explorador Joseph";
-                messageText = "Olá ser vivo… humanóide… robô… criatura, ou seja lá o que você for. Este é o grande deserto de Pethasvya e sou Joseph, um simples explorador. Aqui não é um desertinho comum, as areias daqui tem grandes efeitos curativos, ela é bem cobiçada pelo povo de Heude, o grande império sobre as areias! Está aqui pela areia? Pela geografia? Ou será que tem algo a mais?";
+                messageText = "Olá ser vivo... humanóide... robô... criatura, ou seja lá o que você for. Este é o grande deserto de Pethasvya e sou Joseph, um simples explorador. Aqui não é um desertinho comum, as areias daqui tem grandes efeitos curativos, ela é bem cobiçada pelo povo de Heude, o grande império sobre as areias! Está aqui pela areia? Pela geografia? Ou será que tem algo a mais?";
                 break;
             case 3:
                 messageTitle = "Explorador Joseph";
-                messageText = "Fato divertido: Em Heude há um deus da discórdia, ele é chamado de Aadimos. Eu sinceramente não sei por que o cultuam, ele é meio… não entendo, ele faz o quê? Faz você brigar pelo último pedaço de bolo? Sempre que você maldisser de alguém você diz 'GRAÇAS A DEUS!!' ? Realmente não sei, mas é uma coisa a se pensar, até a próxima!";
+                messageText = "Olá de novo! Fato divertido: Em Heude há um deus da discórdia, ele é chamado de Aadimos. Eu sinceramente não sei por que o cultuam, ele é meio... não entendo, ele faz o quê? Faz você brigar pelo último pedaço de bolo? Sempre que você maldisser de alguém você diz 'GRAÇAS A DEUS!!' ? Realmente não sei, mas é uma coisa a se pensar, até a próxima!";
                 break;
             case 4:
                 messageTitle = "Explorador Joseph";
-                messageText = "Olá de novo… ainda continua vivo? Que sorte! Você deve ter observado que aqui não é só beleza. Viu as criaturas voadoras? Elas são conhecidas como Tubresas, prefiro chamá-las de D3SGRAÇ@DA$, desculpe, eu realmente não gosto delas. Bom... por enquanto é isso, adeus.";
+                messageText = "Olá de novo... ainda continua vivo? Que sorte! Você deve ter observado que aqui não é só beleza. Viu as criaturas voadoras? Elas são conhecidas como Tubresas, prefiro chamá-las de D3SGRAÇ@DA$, desculpe, eu realmente não gosto delas. Bom... por enquanto é isso, adeus.";
                 break;
             case 5:
                 messageTitle = "Explorador Joseph";
-                messageText = "Colete todos os meteoritos espalhados por Pethasvya";
+                messageText = "Tá cansado(a) né? Ogn é o nome daquele lagarto laranja, ele é bem rápido e saboroso, sim, a carne dele é uma das mais procuradas aqui, com ela se faz os tão cobiçados Turbies (uma massa crocante com uma deliciosa carne de Ogn). Bom, vou comer o meu agora... é tão bom!";
                 break;
             case 6:
                 messageTitle = "Explorador Joseph";
-                messageText = "Elimine todas as ameaças menores";
+                messageText = "Triste... vazio... sem esperança... sozinho..., agora chega de falar de você e vamos falar sobre os vermes dessa caverna. Eles são conhecidos como Varzsm e são bem tímidos... a menos que você chegue perto demais, você gostaria que pisassem na sua cabeça?";
                 break;
             case 7:
                 messageTitle = "Explorador Joseph";
-                messageText = "Acerte 100% dos tiros";
+                messageText = "Você chegou bem longe!... muito mais do que eu, desisti por aqui mesmo, este monstro é desafiador demais para mim, creio é claro que não para você. Mas aqui entre nós... vou te dar uma dica: ele ataca outros bichos sem chegar perto, não sei como, mas ele pode atacar de longe.";
                 break;
             case 8:
                 messageTitle = "Sistema";

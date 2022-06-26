@@ -67,6 +67,7 @@ public class Move2D : MonoBehaviour
     public GameObject bulletEffect; //efeito de disparo
     private float selfTimeBullet = 0; //tempo entre tiros
     private bool canShoot = true; //pode atirar
+    private float canShootTime = 0.5f;
 
     [Header("Hit")]
     public GameObject spark;
@@ -697,8 +698,8 @@ public class Move2D : MonoBehaviour
     void TimerBullet()
     {
         selfTimeBullet += Time.deltaTime;
-        bulletHUD.GetComponent<BulletHUD>().BulletTimer();
-        if (selfTimeBullet > 0.5f)
+        bulletHUD.GetComponent<BulletHUD>().BulletTimer(1/canShootTime);
+        if (selfTimeBullet > canShootTime)
         {
             canShoot = true;
             selfTimeBullet = 0;
@@ -744,7 +745,7 @@ public class Move2D : MonoBehaviour
             CallAchievementPopUp(6);
         }
 
-        if (disketsCollected >= 5 && GetAchievementID() == 0)
+        if (disketsCollected >= 6 && GetAchievementID() == 0)
         {
             CallAchievementPopUp(1);
         }
@@ -752,6 +753,8 @@ public class Move2D : MonoBehaviour
         if (meteorsCollected >= 6 && GetAchievementID() == 0)
         {
             CallAchievementPopUp(5);
+            CallMessagePopUp(8);
+            canShootTime = 0.25f;
         }
     }
 

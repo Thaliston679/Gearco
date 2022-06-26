@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class BulletHUD : MonoBehaviour
 {
     // Update is called once per frame
-    public void BulletTimer()
+    public void BulletTimer(float a)
     {
-        GetComponent<Image>().fillAmount += 2f * Time.deltaTime;
+        GetComponent<Image>().fillAmount += a * Time.deltaTime;
     }
 
     public void BulletShoot()

@@ -90,7 +90,7 @@ public class AchievementControl : MonoBehaviour
                 achievementText = "Nade por 30 segundos na areia movediça";
                 break;
             case 5:
-                achievementTitle = "Colecionador"; //Colecionador de Meteoritos
+                achievementTitle = "Colecionador";
                 achievementText = "Colete todos os meteoritos espalhados por Pethasvya";
                 break;
             case 6:

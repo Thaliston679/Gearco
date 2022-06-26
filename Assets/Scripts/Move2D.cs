@@ -40,6 +40,9 @@ public class Move2D : MonoBehaviour
     private int deadEnemies = 0;
     private int achievementsUnlocked;
 
+    private int messageIDRecept = 0;
+    MessageControl message;
+
     //Pulo de altura variavel
     [Header("Pulo de altura variavel")]
     public bool isJumping;
@@ -85,6 +88,7 @@ public class Move2D : MonoBehaviour
         Time.timeScale = 0;
 
         achievement = GameObject.FindGameObjectWithTag("Achievement").GetComponent<AchievementControl>();
+        message = GameObject.FindGameObjectWithTag("Message").GetComponent<MessageControl>();
         boss.SetActive(false);
     }
 
@@ -707,7 +711,15 @@ public class Move2D : MonoBehaviour
         Vector3 flagPos = collision.gameObject.GetComponent<ItenMovement>().GetStartPosistion();
         spawnPoint = flagPos;
         GameObject flag = Instantiate(flagCheck, new Vector3(flagPos.x,flagPos.y - 1.02f,0), Quaternion.identity);
+
+        messageIDRecept = collision.gameObject.GetComponent<MessageSystem>().GetMessageIDPass();
+        if (GetMessageID() == 0)
+        {
+            CallMessagePopUp(messageIDRecept);
+        }
+
         Destroy(collision.gameObject);
+
         if (playerHP < 3)
         {
             playerHP = 3;
@@ -783,6 +795,16 @@ public class Move2D : MonoBehaviour
             achievement.achievementID = a;
             achievement.achievementLockList[a - 1] = a;
             achievement.animator.SetTrigger("AchivementUnlock");
+        }
+    }
+
+    public void CallMessagePopUp(int a)
+    {
+        if (message.messageLockList[a - 1] == 0)
+        {
+            message.messageID = a;
+            message.messageLockList[a - 1] = a;
+            message.animator.SetTrigger("MessagePoppingUp");
         }
     }
 
@@ -881,5 +903,10 @@ public class Move2D : MonoBehaviour
     public void SetAchievementID(int a)
     {
         achievement.achievementID = a;
+    }
+
+    public int GetMessageID()
+    {
+        return message.messageID;
     }
 }

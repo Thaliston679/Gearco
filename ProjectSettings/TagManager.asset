@@ -22,6 +22,7 @@ TagManager:
   - ItensSpawner
   - EnemiesSpawner
   - EnemyBullet
+  - Message
   layers:
   - Default
   - TransparentFX

@@ -103,7 +103,6 @@ public class Move2D : MonoBehaviour
         Respawn();
         AttBatteryHUD();
         DustMirrorMovement();
-        Debug.Log(deathCounter);
     }
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -300,10 +299,6 @@ public class Move2D : MonoBehaviour
             GameObject meteorEffectI = Instantiate(meteorEffect, collision.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             meteorsCollected++;
-            if(meteorsCollected >= 6)
-            {
-                CallAchievementPopUp(5);
-            }
         }
 
         if (collision.gameObject.CompareTag("plataforma")) //Plataforma flutuante
@@ -720,11 +715,6 @@ public class Move2D : MonoBehaviour
         }
 
         disketsCollected++;
-        if(disketsCollected >= 5)
-        {
-            CallAchievementPopUp(1);
-        }
-
     }
 
     //Redefine os valores de vida e spawnPoint
@@ -737,9 +727,19 @@ public class Move2D : MonoBehaviour
     //Conquistas
     void Achievements()
     {
-        if(deadEnemies >= 30)
+        if(deadEnemies >= 30 && GetAchievementID() == 0)
         {
             CallAchievementPopUp(6);
+        }
+
+        if (disketsCollected >= 5 && GetAchievementID() == 0)
+        {
+            CallAchievementPopUp(1);
+        }
+
+        if (meteorsCollected >= 6 && GetAchievementID() == 0)
+        {
+            CallAchievementPopUp(5);
         }
     }
 

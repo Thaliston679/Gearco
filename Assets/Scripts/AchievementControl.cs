@@ -20,12 +20,15 @@ public class AchievementControl : MonoBehaviour
 
     private string disketsCounter;
     private string achievsCounter;
+    private string achievsCounterCredits;
     private string meteorsCounter;
     public GameObject disketsCounterBox;
     public GameObject achievsCounterBox;
+    public GameObject achievsCounterBoxCredits;
     public GameObject meteorsCounterBox;
     TextMeshProUGUI disketsCounterTextMeshProUiGUI;
     TextMeshProUGUI achievsCounterTextMeshProUiGUI;
+    TextMeshProUGUI achievsCounterTextMeshProUiGUICredits;
     TextMeshProUGUI meteorsCounterTextMeshProUiGUI;
 
     public int achievementID = 0;
@@ -41,6 +44,7 @@ public class AchievementControl : MonoBehaviour
 
         disketsCounterTextMeshProUiGUI = disketsCounterBox.GetComponent<TextMeshProUGUI>();
         achievsCounterTextMeshProUiGUI = achievsCounterBox.GetComponent<TextMeshProUGUI>();
+        achievsCounterTextMeshProUiGUICredits = achievsCounterBoxCredits.GetComponent<TextMeshProUGUI>();
         meteorsCounterTextMeshProUiGUI = meteorsCounterBox.GetComponent<TextMeshProUGUI>();
 
         OnAchievement();
@@ -56,10 +60,12 @@ public class AchievementControl : MonoBehaviour
 
         disketsCounter = move2D.GetDisketsCollected().ToString() + " / 5";
         achievsCounter = move2D.GetAchievementsUnlocked().ToString() + " / 6";
+        achievsCounterCredits = move2D.GetAchievementsUnlocked().ToString() + " / 6";
         meteorsCounter = move2D.GetMeteorsCollected().ToString() + " / 6";
 
         disketsCounterTextMeshProUiGUI.text = disketsCounter;
         achievsCounterTextMeshProUiGUI.text = achievsCounter;
+        achievsCounterTextMeshProUiGUICredits.text = achievsCounterCredits;
         meteorsCounterTextMeshProUiGUI.text = meteorsCounter;
     }
 

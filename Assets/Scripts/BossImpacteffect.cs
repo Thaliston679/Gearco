@@ -15,6 +15,6 @@ public class BossImpacteffect : MonoBehaviour
     }
     void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x + flipx * speed, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + flipx * speed, transform.position.y, 0);
     }
 }

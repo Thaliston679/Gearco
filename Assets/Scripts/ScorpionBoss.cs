@@ -40,7 +40,7 @@ public class ScorpionBoss : MonoBehaviour
     {
         if (!flipX)
         {
-            Vector3 impactPos = new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z);
+            Vector3 impactPos = new Vector3(transform.position.x - 2.5f, transform.position.y, 0);
             GameObject impact = Instantiate(impactEffect, impactPos, Quaternion.identity);
             SpriteRenderer spriteRenderer = impact.GetComponent<SpriteRenderer>();
             spriteRenderer.flipX = false;
@@ -48,7 +48,7 @@ public class ScorpionBoss : MonoBehaviour
         }
         else if (flipX)
         {
-            Vector3 impactPos = new Vector3(transform.position.x + 2.5f, transform.position.y, transform.position.z);
+            Vector3 impactPos = new Vector3(transform.position.x + 2.5f, transform.position.y, 0);
             GameObject impact = Instantiate(impactEffect, impactPos, Quaternion.identity);
             SpriteRenderer spriteRenderer = impact.GetComponent<SpriteRenderer>();
             spriteRenderer.flipX = true;
@@ -62,12 +62,12 @@ public class ScorpionBoss : MonoBehaviour
     {
         if (!flipX)
         {
-            Vector3 poisonBulletPos = new Vector3(transform.position.x + 1.971f, transform.position.y + 2.642f, transform.position.z);
+            Vector3 poisonBulletPos = new Vector3(transform.position.x + 1.971f, transform.position.y + 2.642f, 0);
             GameObject poisonBulletI = Instantiate(poisonBullet, poisonBulletPos, Quaternion.identity);
         }
         else if (flipX)
         {
-            Vector3 poisonBulletPos = new Vector3(transform.position.x - 1.971f, transform.position.y + 2.642f, transform.position.z);
+            Vector3 poisonBulletPos = new Vector3(transform.position.x - 1.971f, transform.position.y + 2.642f, 0);
             GameObject poisonBulletI = Instantiate(poisonBullet, poisonBulletPos, Quaternion.identity);
         }
     }

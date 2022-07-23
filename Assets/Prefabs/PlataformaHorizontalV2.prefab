@@ -151,7 +151,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66693812763a641498eaa57d872a8646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forRight: 0
   velPlat: 4
   moveRight: {fileID: 5121015093605679830}
   moveLeft: {fileID: 5121015093249248557}

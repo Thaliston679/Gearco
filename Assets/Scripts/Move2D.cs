@@ -74,6 +74,12 @@ public class Move2D : MonoBehaviour
 
     private Vector3 spawnPoint = new Vector3(-17, -1, 0); //Posição inicial
 
+    private bool touchRight = false;
+    private bool touchLeft = false;
+    private bool touchFire = false;
+    private bool touchJump = false;
+    private bool touchTrigger = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -127,12 +133,12 @@ public class Move2D : MonoBehaviour
     {
         if (!lockMove)
         {
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || (Input.GetAxisRaw("Horizontal") > 0))
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || (Input.GetAxisRaw("Horizontal") > 0) || touchRight)
             {
                 rb.velocity = new Vector2(speed, rb.velocity.y);
                 direction = 1;
             }
-            else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || (Input.GetAxisRaw("Horizontal") < 0))
+            else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || (Input.GetAxisRaw("Horizontal") < 0) || touchLeft)
             {
                 rb.velocity = new Vector2(-speed, rb.velocity.y);
                 direction = -1;
@@ -165,18 +171,18 @@ public class Move2D : MonoBehaviour
     //Pulo do personagem
     void PlayerJump()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetButtonDown("JumpA"))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetButtonDown("JumpA") || touchJump)
         {
             if (isGrounded || quicksandSinking)
             {
                 isJumping = true;
             }
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetButton("JumpA"))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetButton("JumpA") || touchJump)
         {
             counterJump -= Time.deltaTime;
         }
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetButtonUp("JumpA"))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetButtonUp("JumpA") || !touchJump)
         {
             isJumping = false;
             counterJump = 0.17f;
@@ -632,11 +638,12 @@ public class Move2D : MonoBehaviour
     {
         if (canShoot)
         {
-            if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("FireX"))
+            if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("FireX") || touchFire)
             {
                 canShoot = false;
                 Shoot();
                 bulletHUD.GetComponent<BulletHUD>().BulletShoot();
+                touchFire = false;
             }
         }
         else
@@ -808,6 +815,64 @@ public class Move2D : MonoBehaviour
             message.messageID = a;
             message.messageLockList[a - 1] = a;
             message.animator.SetTrigger("MessagePoppingUp");
+        }
+    }
+
+    public void TouchDown(int a)
+    {
+        switch (a)
+        {
+            case 0:
+                touchRight = true;
+                break;
+            case 1:
+                touchLeft = true;
+                break;
+            case 2:
+                touchFire = true;
+                break;
+            case 3:
+                touchJump = true;
+                break;
+        }
+    }
+
+    public void TouchUp(int a)
+    {
+        switch (a)
+        {
+            case 0:
+                touchRight = false;
+                break;
+            case 1:
+                touchLeft = false;
+                break;
+            case 2:
+                touchFire = false;
+                break;
+            case 3:
+                touchJump = false;
+                break;
+        }
+    }
+
+    public IEnumerator TouchDownTrigger(int a)
+    {
+        yield return new WaitForSeconds(0.01f);
+        switch (a)
+        {
+            case 0:
+                touchRight = false;
+                break;
+            case 1:
+                touchLeft = false;
+                break;
+            case 2:
+                touchFire = false;
+                break;
+            case 3:
+                touchJump = false;
+                break;
         }
     }
 

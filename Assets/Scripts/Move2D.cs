@@ -182,7 +182,7 @@ public class Move2D : MonoBehaviour
         {
             counterJump -= Time.deltaTime;
         }
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetButtonUp("JumpA") || !touchJump)
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetButtonUp("JumpA"))
         {
             isJumping = false;
             counterJump = 0.17f;
